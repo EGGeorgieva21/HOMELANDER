@@ -1,0 +1,118 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "cvb.bll/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "cvb.dal": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/cvb.bll.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/cvb.bll.dll": {}
+        }
+      },
+      "cvb.dal/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/cvb.dal.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/cvb.dal.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "cvb.bll/1.0.0": {
+      "type": "project",
+      "path": "../cvb.bll/cvb.bll.csproj",
+      "msbuildProject": "../cvb.bll/cvb.bll.csproj"
+    },
+    "cvb.dal/1.0.0": {
+      "type": "project",
+      "path": "../cvb.dal/cvb.dal.csproj",
+      "msbuildProject": "../cvb.dal/cvb.dal.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "cvb.bll >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\HOMELANDER\\src\\CVBuilder\\cvb.web\\cvb.web.csproj",
+      "projectName": "cvb.web",
+      "projectPath": "C:\\Users\\admin\\Documents\\HOMELANDER\\src\\CVBuilder\\cvb.web\\cvb.web.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\Documents\\HOMELANDER\\src\\CVBuilder\\cvb.web\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\admin\\Documents\\HOMELANDER\\src\\CVBuilder\\cvb.bll\\cvb.bll.csproj": {
+              "projectPath": "C:\\Users\\admin\\Documents\\HOMELANDER\\src\\CVBuilder\\cvb.bll\\cvb.bll.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

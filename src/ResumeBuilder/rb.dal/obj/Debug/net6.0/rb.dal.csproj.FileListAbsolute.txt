@@ -26,3 +26,17 @@ C:\Users\admin\source\repos\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0
 C:\Users\admin\source\repos\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.pdb
 C:\Users\admin\source\repos\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.genruntimeconfig.cache
 C:\Users\admin\source\repos\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\ref\rb.dal.dll
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\bin\Debug\net6.0\rb.dal.deps.json
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\bin\Debug\net6.0\rb.dal.runtimeconfig.json
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\bin\Debug\net6.0\rb.dal.dll
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\bin\Debug\net6.0\rb.dal.pdb
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.csproj.AssemblyReference.cache
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.GeneratedMSBuildEditorConfig.editorconfig
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.AssemblyInfoInputs.cache
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.AssemblyInfo.cs
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.csproj.CoreCompileInputs.cache
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.dll
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\refint\rb.dal.dll
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.pdb
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\rb.dal.genruntimeconfig.cache
+D:\HOMELANDER\src\ResumeBuilder\rb.dal\obj\Debug\net6.0\ref\rb.dal.dll

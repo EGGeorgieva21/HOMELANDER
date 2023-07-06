@@ -1,2 +1,2 @@
 # HOMELANDER
-CV builder :)
+CV/Resume builder :)

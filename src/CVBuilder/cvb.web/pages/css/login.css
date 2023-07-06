@@ -1,0 +1,69 @@
+body {
+    background-color :aliceblue;
+}
+
+.loginForm {
+    background-color: white;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    padding: 6%;
+    width: 90%;
+    max-width: 400px;
+}
+
+#loginText 
+{
+    font-family :'Agency FB';
+    font-size: 37px;
+    padding-left : 40%; 
+}
+
+
+.txtBox {
+    margin-top: 10px;
+    padding: 10px;
+    border-color: beige;
+    font-family: 'Century Gothic';
+    width: 100%;
+}
+
+
+.showPassword {
+    margin-top: 15px;
+    margin-bottom: 60px;
+}
+
+#loginButton {
+    text-decoration: none;
+    margin-left: 20%;
+    margin-top: 60px;
+
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 26%;
+    padding-right: 26%;
+
+    background-color: #5EC17F;
+    color: white;
+    font-size: larger;
+    font-family: Britannic;
+
+}
+
+#noAccText {
+    margin-top: 10%;
+    font-family: 'Century Gothic';
+    font-size: 19px;
+    position: absolute;
+}
+
+#registerButton {
+    position: absolute;
+    margin-top: 10.5%;
+    margin-left: 17%;
+    color: black;
+}

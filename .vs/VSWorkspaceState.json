@@ -3,8 +3,11 @@
     "",
     "\\src",
     "\\src\\CVBuilder",
-    "\\src\\CVBuilder\\cvb.web"
+    "\\src\\CVBuilder\\cvb.web",
+    "\\src\\CVBuilder\\cvb.web\\pages",
+    "\\src\\CVBuilder\\cvb.web\\pages\\css",
+    "\\src\\CVBuilder\\cvb.web\\pages\\html"
   ],
-  "SelectedNode": "\\src\\CVBuilder\\CVBuilder.sln",
+  "SelectedNode": "\\src\\CVBuilder\\cvb.web\\pages\\css\\login.css",
   "PreviewInSolutionExplorer": false
 }

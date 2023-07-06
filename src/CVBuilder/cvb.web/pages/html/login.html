@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../css/login.css">
     <title>Login</title>
 </head>
 <body>
     <div class="loginForm">
-        <div>
-            <h1>Login</h1>
+            <h1 id="loginText">Login</h1>
             <form>
-                <label for="userName">Username:</label><br>
-                <input type="text" id="userName" placeholder="Username" name="uname"><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" placeholder="password">
+                <input type="text" class="txtBox" placeholder="Username" name="uname"><br>
+                <br />
+                <input type="password" class="txtBox" placeholder="Password">
+
+
+                <input type="checkbox" class="showPassword" name="scales">
+                <label for="scales" class="showPassword">Show Password</label>
+
+
                 <br>
-                <button onclick="window.location.href = 'main.html'"> Login</button>
+                <a href="main.html" id="loginButton">Login</a>
+                <br />
+
+                <p id="noAccText">No acc?</p>
+                <a href="register.html" id="registerButton">Register</a> <br />
                 <br>
             </form>
-        </div>
     </div> 
 </body>
 </html>

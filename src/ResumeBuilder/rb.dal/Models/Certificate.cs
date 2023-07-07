@@ -12,11 +12,17 @@ public partial class Certificate
     public int Id { get; set; }
 
     [StringLength(50)]
-    public string? Name { get; set; }
+    public string Name { get; set; } = null!;
 
     [Column(TypeName = "date")]
     public DateTime IssuedDate { get; set; }
 
     [Column(TypeName = "date")]
     public DateTime? ExpirationDate { get; set; }
+
+    public int? UserId { get; set; }
+
+    [ForeignKey("UserId")]
+    [InverseProperty("Certificates")]
+    public virtual User? User { get; set; }
 }

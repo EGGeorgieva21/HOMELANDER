@@ -16,11 +16,17 @@ public partial class Education
     public string Place { get; set; } = null!;
 
     [Column(TypeName = "date")]
-    public DateTime FromDate { get; set; }
+    public DateTime? FromDate { get; set; }
 
     [Column(TypeName = "date")]
     public DateTime? ToDate { get; set; }
 
+    public int? UserId { get; set; }
+
     [InverseProperty("Education")]
     public virtual ICollection<EducationSkill> EducationSkills { get; set; } = new List<EducationSkill>();
+
+    [ForeignKey("UserId")]
+    [InverseProperty("Educations")]
+    public virtual User? User { get; set; }
 }

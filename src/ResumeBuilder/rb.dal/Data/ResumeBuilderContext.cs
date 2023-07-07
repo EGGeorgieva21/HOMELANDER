@@ -34,6 +34,8 @@ public partial class ResumeBuilderContext : DbContext
 
     public virtual DbSet<UserLanguage> UserLanguages { get; set; }
 
+    public virtual DbSet<UserSkill> UserSkills { get; set; }
+
     public virtual DbSet<WorkExperience> WorkExperiences { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -44,76 +46,83 @@ public partial class ResumeBuilderContext : DbContext
     {
         modelBuilder.Entity<Certificate>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Certific__3214EC07732AD411");
+            entity.HasKey(e => e.Id).HasName("PK__Certific__3214EC07894B6857");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Certificates).HasConstraintName("FK__Certifica__UserI__3A81B327");
         });
 
         modelBuilder.Entity<Education>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC07D00699C4");
+            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC070A6756C6");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Educations).HasConstraintName("FK__Education__UserI__46E78A0C");
         });
 
         modelBuilder.Entity<EducationSkill>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC07F37156CF");
+            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC07354DC4C9");
 
-            entity.HasOne(d => d.Education).WithMany(p => p.EducationSkills)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Education__Educa__44FF419A");
+            entity.HasOne(d => d.Education).WithMany(p => p.EducationSkills).HasConstraintName("FK__Education__Educa__49C3F6B7");
 
-            entity.HasOne(d => d.Skill).WithMany(p => p.EducationSkills)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Education__Skill__45F365D3");
+            entity.HasOne(d => d.Skill).WithMany(p => p.EducationSkills).HasConstraintName("FK__Education__Skill__4AB81AF0");
         });
 
         modelBuilder.Entity<Language>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Language__3214EC071ADA6BCD");
+            entity.HasKey(e => e.Id).HasName("PK__Language__3214EC07FC50C201");
         });
 
         modelBuilder.Entity<Resume>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Resumes__3214EC07CA2EE47C");
+            entity.HasKey(e => e.Id).HasName("PK__Resume__3214EC07740AAC9A");
 
-            entity.HasOne(d => d.Template).WithMany(p => p.Resumes)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Resumes__Templat__4D94879B");
+            entity.HasOne(d => d.Template).WithMany(p => p.Resumes).HasConstraintName("FK__Resume__Template__571DF1D5");
 
-            entity.HasOne(d => d.User).WithMany(p => p.Resumes)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Resumes__UserId__4CA06362");
+            entity.HasOne(d => d.User).WithMany(p => p.Resumes).HasConstraintName("FK__Resume__UserId__5629CD9C");
         });
 
         modelBuilder.Entity<Skill>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Skills__3214EC0750023C2D");
+            entity.HasKey(e => e.Id).HasName("PK__Skills__3214EC07991F9ABE");
         });
 
         modelBuilder.Entity<Template>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Template__3214EC07B61EE449");
+            entity.HasKey(e => e.Id).HasName("PK__Template__3214EC0718A5A755");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07B5B59096");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07E5750C97");
         });
 
         modelBuilder.Entity<UserLanguage>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserLang__3214EC07D4C532A8");
+            entity.HasKey(e => e.Id).HasName("PK__UserLang__3214EC07AB1066C6");
 
             entity.HasOne(d => d.Language).WithMany(p => p.UserLanguages)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__UserLangu__Langu__3C69FB99");
+                .HasConstraintName("FK__UserLangu__Langu__5165187F");
 
             entity.HasOne(d => d.User).WithMany(p => p.UserLanguages)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__UserLangu__UserI__3B75D760");
+                .HasConstraintName("FK__UserLangu__UserI__5070F446");
+        });
+
+        modelBuilder.Entity<UserSkill>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__UserSkil__3214EC07BEAE8095");
+
+            entity.HasOne(d => d.Skill).WithMany(p => p.UserSkills).HasConstraintName("FK__UserSkill__Skill__412EB0B6");
+
+            entity.HasOne(d => d.User).WithMany(p => p.UserSkills).HasConstraintName("FK__UserSkill__UserI__403A8C7D");
         });
 
         modelBuilder.Entity<WorkExperience>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__WorkExpe__3214EC072E8A5DB2");
+            entity.HasKey(e => e.Id).HasName("PK__WorkExpe__3214EC073CC35591");
+
+            entity.HasOne(d => d.User).WithMany(p => p.WorkExperiences).HasConstraintName("FK__WorkExper__UserI__440B1D61");
         });
 
         OnModelCreatingPartial(modelBuilder);

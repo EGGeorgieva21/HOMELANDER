@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jaba\\.nuget\\packages\\": {},
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\HOMELANDER\\src\\ResumeBuilder\\rb.web\\rb.web.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\source\\repos\\HOMELANDER\\src\\ResumeBuilder\\rb.web\\rb.web.csproj",
       "projectName": "rb.web",
-      "projectPath": "D:\\GitHub\\HOMELANDER\\src\\ResumeBuilder\\rb.web\\rb.web.csproj",
-      "packagesPath": "C:\\Users\\jaba\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\HOMELANDER\\src\\ResumeBuilder\\rb.web\\obj\\",
+      "projectPath": "C:\\Users\\admin\\source\\repos\\HOMELANDER\\src\\ResumeBuilder\\rb.web\\rb.web.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\source\\repos\\HOMELANDER\\src\\ResumeBuilder\\rb.web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jaba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },

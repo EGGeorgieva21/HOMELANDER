@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace rb.console
 {
-    internal class Program
+    internal class Start
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            MainMenu.Print();
         }
     }
 }

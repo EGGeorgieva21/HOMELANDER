@@ -21,7 +21,7 @@ namespace rb.console
                 switch(input)
                 {
                     case '1': RegisterMenu.Print(); break;
-                    case '2': /* LoginMenu.Print(); */ break;
+                    case '2': LoginMenu.Print(); break;
                     default: Environment.Exit(0); break;
                 }
             }

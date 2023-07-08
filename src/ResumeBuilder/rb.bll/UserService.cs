@@ -39,7 +39,31 @@ namespace rb.bll
                 return true;
             }
         }
-        
+
+        public static bool VerifyUser(string Username, string Password)
+        {
+            using (ResumeBuilderContext context = new ResumeBuilderContext())
+            {
+                GenericRepository<User> genericRepository = new(context);
+
+                List<User> users = genericRepository.GetAll().ToList();
+                User user = users.FirstOrDefault(u => u.Username == Username);
+
+                if(user == null)
+                { 
+                    return false; 
+                }
+
+                string saltedPassword = Password + user.Salt;
+                if(user.Password != HashPassword(saltedPassword)) 
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+
         public static string GenerateSalt()
         {
             Random rnd = new Random();

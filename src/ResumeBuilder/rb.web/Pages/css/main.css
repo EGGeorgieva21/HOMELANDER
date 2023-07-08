@@ -9,16 +9,15 @@ body {
 /* add button hover */
 
 #topNav {
-
     top: 0;
     position: sticky;
-    padding-top:2%;
-    padding-bottom: 3.5%;
-    border-bottom: outset #B8B8B8;
- 
-    border-radius: 12px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    box-shadow: 1px 3px 6px#C8D3D6;
+    background-color: white;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     width: 100%;
-
 }
 
 
@@ -39,11 +38,23 @@ body {
     margin-left: 65%;
     padding: 16px 35px 16px 35px;
     border-radius: 12px;
-    border:outset aliceblue;
+    border: outset aliceblue;
     color: darkslateblue;
     font-size: larger;
     text-decoration: none;
+
 }
-#loginButton:hover {
-    background-color: aliceblue;
+    #loginButton:hover {
+        background-color: aliceblue;
+        box-shadow: 0 0 10px #48abe0;
+    }
+
+#midClearing {
+    margin-top: 42px;
+    margin-right: 7%;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: #C9F3FF;
 }

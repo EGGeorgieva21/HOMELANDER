@@ -8,35 +8,33 @@ using System.Threading.Tasks;
 
 namespace rb.console
 {
-    internal class RegisterMenu
+    internal class LoginMenu
     {
         public static void Print()
         {
             Console.Clear();
-            Console.WriteLine("Register\n");
+            Console.WriteLine("Login\n");
 
             Console.Write("Username: ");
             string Username = Console.ReadLine();
             Console.Write("Password: ");
             string Password = Console.ReadLine();
-            Console.Write("Email: ");
-            string Email = Console.ReadLine();
 
-            if(Username.IsNullOrEmpty() || Password.IsNullOrEmpty() || Email.IsNullOrEmpty())
+            if (Username.IsNullOrEmpty() || Password.IsNullOrEmpty())
             {
                 Console.WriteLine("\nAll input required!");
                 Console.ReadKey();
                 Print();
             }
 
-            if(!UserService.RegisterUser(Username, Password, Email))
+            if (!UserService.VerifyUser(Username, Password))
             {
-                Console.WriteLine("\nUsername already taken!");
+                Console.WriteLine("\nWrong user info!");
                 Console.ReadKey();
                 Print();
             }
 
-            Console.WriteLine("\nUser Registered");
+            Console.WriteLine("\nUser Logged In");
             Console.ReadKey();
             MainMenu.Print();
         }

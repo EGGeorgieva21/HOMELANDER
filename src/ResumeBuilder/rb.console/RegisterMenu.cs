@@ -29,7 +29,9 @@ namespace rb.console
                 Print();
             }
 
-            if(!UserService.RegisterUser(Username, Password, Email))
+            UserService userService = new UserService();
+
+            if (!userService.RegisterUser(Username, Password, Email))
             {
                 Console.WriteLine("\nUsername already taken!");
                 Console.ReadKey();

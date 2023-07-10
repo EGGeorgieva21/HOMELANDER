@@ -12,59 +12,57 @@ namespace rb.bll
 {
     public class UserService
     {
-        public static bool RegisterUser(string Username, string Password, string Email)
+        private readonly ResumeBuilderContext _context;
+        GenericRepository<User> genericRepository;
+        public UserService()
         {
-            using(ResumeBuilderContext context = new ResumeBuilderContext())
-            {
-                GenericRepository<User> genericRepository = new(context);
-
-                List<User> users = genericRepository.GetAll().ToList();
-                if (users.FirstOrDefault(u => u.Username == Username) != null)
-                {
-                    return false;
-                }
-
-                User user = new User()
-                {
-                    Username = Username,
-                    Email = Email
-                };
-
-                user.Salt = GenerateSalt();
-                string saltedPassword = Password + user.Salt;
-                user.Password = HashPassword(saltedPassword);
-
-                genericRepository.Add(user);
-                context.SaveChanges();
-                return true;
-            }
+            _context = new ResumeBuilderContext();
+            genericRepository = new(_context);
         }
 
-        public static bool VerifyUser(string Username, string Password)
+        public bool RegisterUser(string Username, string Password, string Email)
         {
-            using (ResumeBuilderContext context = new ResumeBuilderContext())
+            List<User> users = genericRepository.GetAll().ToList();
+            if (users.FirstOrDefault(u => u.Username == Username) != null)
             {
-                GenericRepository<User> genericRepository = new(context);
-
-                List<User> users = genericRepository.GetAll().ToList();
-                User user = users.FirstOrDefault(u => u.Username == Username);
-
-                if(user == null)
-                { 
-                    return false; 
-                }
-
-                string saltedPassword = Password + user.Salt;
-                if(user.Password != HashPassword(saltedPassword)) 
-                {
-                    return false;
-                }
-                return true;
+                return false;
             }
+
+            User user = new User()
+            {
+                Username = Username,
+                Email = Email
+            };
+
+            user.Salt = GenerateSalt();
+            string saltedPassword = Password + user.Salt;
+            user.Password = HashPassword(saltedPassword);
+
+            genericRepository.Add(user);
+            _context.SaveChanges();
+            return true;
+        }
+
+        public bool VerifyUser(string Username, string Password)
+        {
+            List<User> users = genericRepository.GetAll().ToList();
+            User user = users.FirstOrDefault(u => u.Username == Username);
+
+            if(user == null)
+            { 
+                return false; 
+            }
+
+            string saltedPassword = Password + user.Salt;
+            if(user.Password != HashPassword(saltedPassword)) 
+            {
+                return false;
+            }
+            return true;
         }
 
 
-        public static string GenerateSalt()
+        private string GenerateSalt()
         {
             Random rnd = new Random();
 
@@ -76,7 +74,7 @@ namespace rb.bll
             return salt;
         }
 
-        public static string HashPassword(string password)
+        private string HashPassword(string password)
         {
             SHA256 hash = SHA256.Create();
 

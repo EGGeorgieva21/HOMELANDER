@@ -1,0 +1,70 @@
+body {
+    background-color: aliceblue;
+}
+
+.registerForm {
+    background-color: white;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    padding: 6%;
+    width: 87%;
+    max-width: 400px;
+}
+
+#registerText {
+    font-family: 'Agency FB';
+    font-size: 37px;
+    padding-left: 35%;
+}
+
+.txtBox {
+    margin-top: 10px;
+    padding: 10px;
+    border-color: beige;
+    font-family: 'Century Gothic';
+    width: 100%;
+}
+
+.showPassword {
+    margin-top: 3.25%;
+    margin-bottom: 9.75%;
+}
+
+#registerButton {
+    text-decoration: none;
+    transition-duration: 0.6s;
+    margin-left: 20%;
+    margin-top: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 26%;
+    padding-right: 26%;
+    background-color: #5EC17F;
+    color: white;
+    font-size: larger;
+    font-family: Britannic;
+}
+    #registerButton:hover {
+        background-color: #53a36e;
+    }
+
+#backButton {
+    text-decoration: none;
+    transition-duration: 0.6s;
+    margin-left: 39%;
+    margin-top: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #4fa16a;
+    color: white;
+    font-size: larger;
+    font-family: Britannic;
+}
+    #backButton:hover {
+        background-color: #428558;
+    }

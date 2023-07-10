@@ -28,8 +28,8 @@ body {
     border-color: beige;
     font-family: 'Century Gothic';
     width: 100%;
+    border-radius: 4px;
 }
-
 
 .showPassword {
     margin-top: 15px;
@@ -38,24 +38,26 @@ body {
 
 #loginButton {
     text-decoration: none;
+    border-radius: 12px;
+    transition-duration: 0.6s;
     margin-left: 20%;
     margin-top: 60px;
-
-
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 26%;
     padding-right: 26%;
-
     background-color: #5EC17F;
     color: white;
     font-size: larger;
     font-family: Britannic;
 
 }
+    #loginButton:hover {
+        background-color: #53a36e;
+    }
 
 #noAccText {
-    margin-top: 10%;
+    margin-top: 7%;
     font-family: 'Century Gothic';
     font-size: 19px;
     position: absolute;
@@ -63,7 +65,7 @@ body {
 
 #registerButton {
     position: absolute;
-    margin-top: 10.5%;
+    margin-top: 7%;
     margin-left: 17%;
     color: black;
 }

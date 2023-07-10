@@ -15,8 +15,14 @@ public partial class WorkExperience
     public string Place { get; set; } = null!;
 
     [Column(TypeName = "date")]
-    public DateTime FromDate { get; set; }
+    public DateTime? FromDate { get; set; }
 
     [Column(TypeName = "date")]
     public DateTime? ToDate { get; set; }
+
+    public int? UserId { get; set; }
+
+    [ForeignKey("UserId")]
+    [InverseProperty("WorkExperiences")]
+    public virtual User? User { get; set; }
 }

@@ -6,21 +6,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace rb.dal.Models;
 
-[Table("Resume")]
-public partial class Resume
+public partial class UserSkill
 {
     [Key]
     public int Id { get; set; }
 
     public int? UserId { get; set; }
 
-    public int? TemplateId { get; set; }
+    public int? SkillId { get; set; }
 
-    [ForeignKey("TemplateId")]
-    [InverseProperty("Resumes")]
-    public virtual Template? Template { get; set; }
+    [ForeignKey("SkillId")]
+    [InverseProperty("UserSkills")]
+    public virtual Skill? Skill { get; set; }
 
     [ForeignKey("UserId")]
-    [InverseProperty("Resumes")]
+    [InverseProperty("UserSkills")]
     public virtual User? User { get; set; }
 }

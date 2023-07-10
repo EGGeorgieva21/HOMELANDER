@@ -61,7 +61,6 @@ namespace rb.bll
             return user;
         }
 
-
         private string GenerateSalt()
         {
             Random rnd = new Random();
@@ -84,6 +83,5 @@ namespace rb.bll
 
             return hashedPass;
         }
-
     }
 }

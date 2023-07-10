@@ -43,22 +43,22 @@ namespace rb.bll
             return true;
         }
 
-        public bool VerifyUser(string Username, string Password)
+        public User? VerifyUser(string Username, string Password)
         {
             List<User> users = genericRepository.GetAll().ToList();
             User user = users.FirstOrDefault(u => u.Username == Username);
 
             if(user == null)
             { 
-                return false; 
+                return null; 
             }
 
             string saltedPassword = Password + user.Salt;
             if(user.Password != HashPassword(saltedPassword)) 
             {
-                return false;
+                return null;
             }
-            return true;
+            return user;
         }
 
 

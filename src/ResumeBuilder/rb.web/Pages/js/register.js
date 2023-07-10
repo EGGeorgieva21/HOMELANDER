@@ -1,7 +1,6 @@
 ﻿
 
 function showPassword() {
-    debugger;
     let id = document.getElementById('Password');
     let bam = document.getElementById('CPassword');
     if (id.type === "password") {

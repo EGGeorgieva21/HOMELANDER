@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace rb.dal.Models;
 
-[Index("Name", Name = "UQ__Language__737584F678E7EB50", IsUnique = true)]
+[Index("Name", Name = "UQ__Language__737584F6C72A3A75", IsUnique = true)]
 public partial class Language
 {
     [Key]

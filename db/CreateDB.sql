@@ -17,9 +17,9 @@ CREATE TABLE [Users] (
 CREATE TABLE [Certificates] (
 	[Id] int PRIMARY KEY IDENTITY(1,1),
 	[Name] nvarchar(50) NOT NULL,
-	[IssuedDate] date NOT NULL,
+	[IssuedDate] date,
 	[ExpirationDate] date,
-	[UserId] int FOREIGN KEY REFERENCES Users(Id)
+	[UserId] int FOREIGN KEY REFERENCES Users(Id) NOT NULL
 );
 
 CREATE TABLE [Skills] (
@@ -29,8 +29,8 @@ CREATE TABLE [Skills] (
 
 CREATE TABLE [UserSkills] (
 	[Id] int PRIMARY KEY IDENTITY(1,1),
-	[UserId] int FOREIGN KEY REFERENCES Users(Id),
-	[SkillId] int FOREIGN KEY REFERENCES Skills(Id)
+	[UserId] int FOREIGN KEY REFERENCES Users(Id) NOT NULL,
+	[SkillId] int FOREIGN KEY REFERENCES Skills(Id) NOT NULL
 );
 
 CREATE TABLE [WorkExperiences] (
@@ -38,7 +38,7 @@ CREATE TABLE [WorkExperiences] (
 	[Place] nvarchar(50) NOT NULL,
 	[FromDate] date,
 	[ToDate] date,
-	[UserId] int FOREIGN KEY REFERENCES Users(Id)
+	[UserId] int FOREIGN KEY REFERENCES Users(Id) NOT NULL
 );
 
 CREATE TABLE [Education] (
@@ -46,13 +46,13 @@ CREATE TABLE [Education] (
 	[Place] nvarchar(50) NOT NULL,
 	[FromDate] date,
 	[ToDate] date,
-	[UserId] int FOREIGN KEY REFERENCES Users(Id)
+	[UserId] int FOREIGN KEY REFERENCES Users(Id) NOT NULL
 );
 
 CREATE TABLE [EducationSkills] (
 	[Id] int PRIMARY KEY IDENTITY(1,1),
-	[EducationId] int FOREIGN KEY REFERENCES Education(Id),
-	[SkillId] int FOREIGN KEY REFERENCES Skills(Id)
+	[EducationId] int FOREIGN KEY REFERENCES Education(Id) NOT NULL,
+	[SkillId] int FOREIGN KEY REFERENCES Skills(Id) NOT NULL
 );
 
 CREATE TABLE [Languages] (
@@ -73,6 +73,6 @@ CREATE TABLE [Templates] (
 
 CREATE TABLE [Resume] (
 	[Id] int PRIMARY KEY IDENTITY(1,1),
-	[UserId] int FOREIGN KEY REFERENCES Users(Id),
-	[TemplateId] int FOREIGN KEY REFERENCES Templates(Id)
+	[UserId] int FOREIGN KEY REFERENCES Users(Id) NOT NULL,
+	[TemplateId] int FOREIGN KEY REFERENCES Templates(Id) NOT NULL
 );

@@ -29,7 +29,7 @@ namespace rb.console
 
             UserService userService = new UserService();
 
-            if (!userService.VerifyUser(Username, Password))
+            if (userService.VerifyUser(Username, Password) == null)
             {
                 Console.WriteLine("\nWrong user info!");
                 Console.ReadKey();

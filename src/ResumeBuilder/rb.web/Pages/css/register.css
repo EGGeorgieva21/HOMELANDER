@@ -6,10 +6,12 @@ body {
     background-color: white;
     border-radius: 20px;
     position: fixed;
+
     left: 50%;
     top: 48%;
+
     transform: translate(-50%, -50%);
-    padding: 6%;
+    padding: 5%;
     width: 87%;
     max-width: 400px;
 }
@@ -17,31 +19,40 @@ body {
 #registerText {
     font-family: 'Agency FB';
     font-size: 37px;
-    padding-left: 35%;
+    padding-left: 35.5%;
 }
 
 .txtBox {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 20px;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 3%;
+
     border-color: beige;
     font-family: 'Century Gothic';
-    width: 100%;
+    width: 98%;
+    border-radius: 4px;
 }
 
 .showPassword {
     margin-top: 3.25%;
-    margin-bottom: 9.75%;
+    margin-bottom: 15.5%;
 }
 
 #registerButton {
     text-decoration: none;
     transition-duration: 0.6s;
-    margin-left: 20%;
-    margin-top: 60px;
+    border-radius: 12px;
+
+    margin-left: 15%;
+    margin-top: 10px;
+
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 26%;
     padding-right: 26%;
+
     background-color: #5EC17F;
     color: white;
     font-size: larger;
@@ -53,18 +64,31 @@ body {
 
 #backButton {
     text-decoration: none;
+    border-radius: 12px;
     transition-duration: 0.6s;
-    margin-left: 39%;
-    margin-top: 45px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10%;
-    padding-right: 10%;
-    background-color: #4fa16a;
-    color: white;
+
+    margin-left: 21.75%;
+    margin-top: 10%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 23%;
+    padding-right: 23%;
+
+    background-color: transparent;
+    color: #5EC17F;
     font-size: larger;
     font-family: Britannic;
 }
+
     #backButton:hover {
-        background-color: #428558;
+        background-color: #5EC17F;
+        color: white;
     }
+
+
+
+#templates
+{      
+    float: left;  
+}

@@ -12,15 +12,15 @@ public partial class Resume
     [Key]
     public int Id { get; set; }
 
-    public int? UserId { get; set; }
+    public int UserId { get; set; }
 
-    public int? TemplateId { get; set; }
+    public int TemplateId { get; set; }
 
     [ForeignKey("TemplateId")]
     [InverseProperty("Resumes")]
-    public virtual Template? Template { get; set; }
+    public virtual Template Template { get; set; } = null!;
 
     [ForeignKey("UserId")]
     [InverseProperty("Resumes")]
-    public virtual User? User { get; set; }
+    public virtual User User { get; set; } = null!;
 }

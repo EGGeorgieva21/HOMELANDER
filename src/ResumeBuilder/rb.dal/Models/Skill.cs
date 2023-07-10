@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace rb.dal.Models;
 
-[Index("Name", Name = "UQ__Skills__737584F621AC8A29", IsUnique = true)]
+[Index("Name", Name = "UQ__Skills__737584F684E625E1", IsUnique = true)]
 public partial class Skill
 {
     [Key]

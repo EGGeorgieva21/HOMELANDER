@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using rb.api.ViewModels;
 using rb.bll;
 using rb.dal.Models;
@@ -19,13 +20,13 @@ namespace rb.api.Controllers
         }
 
         [HttpPost("RegisterUser")]
-        public bool Register([FromBody]RegisterUser registerUser)
+        public bool Register([FromBody] RegisterUser registerUser)
         {
             return userService.RegisterUser(registerUser.Username, registerUser.Password, registerUser.Email);
         }
 
         [HttpPost("LoginUser")]
-        public User Login([FromBody]LoginUser loginUser)
+        public User? Login([FromBody] LoginUser loginUser)
         {
             return userService.VerifyUser(loginUser.Username, loginUser.Password);
         }

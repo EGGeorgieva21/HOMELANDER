@@ -46,7 +46,7 @@ namespace rb.bll
         public User? VerifyUser(string username, string password)
         {
             List<User> users = genericRepository.GetAll().ToList();
-            User user = users.FirstOrDefault(u => u.Username == username);
+            User? user = users.FirstOrDefault(u => u.Username == username);
 
             if(user == null)
             { 

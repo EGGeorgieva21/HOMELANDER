@@ -226,3 +226,4 @@ __pycache__/
 
 # Windows thumbnail cache files
 Thumbs.db
+/src/ResumeBuilder/rb.web/Pages/html/login.html.__projection.g.js

@@ -1,6 +1,8 @@
 body {
     background-color :aliceblue;
+    overflow-y: auto;
 }
+
 
 .loginForm {
     background-color: white;
@@ -9,7 +11,7 @@ body {
     left: 50%;
     top: 48%;
     transform: translate(-50%, -50%);
-    padding: 6%;
+    padding: 4%;
     width: 90%;
     max-width: 400px;
 }
@@ -21,13 +23,18 @@ body {
     padding-left : 40%; 
 }
 
+/* overflow: y auto*/
 
 .txtBox {
     margin-top: 10px;
-    padding: 10px;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 3%;
+
     border-color: beige;
     font-family: 'Century Gothic';
-    width: 100%;
+    width: 98%;
     border-radius: 4px;
 }
 
@@ -56,16 +63,41 @@ body {
         background-color: #53a36e;
     }
 
+#backButton {
+    text-decoration: none;
+    border-radius: 12px;
+    transition-duration: 0.6s;
+
+    margin-left: 23%;
+    margin-top: 10%;
+    margin-bottom: 20px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 23%;
+    padding-right: 23%;
+    background-color: transparent;
+    color: #5EC17F;
+    font-size: larger;
+    font-family: Britannic;
+}
+    #backButton:hover {
+        background-color: #5EC17F;
+        color: white;
+    }
+
+#registerDiv * {
+    float: left;  
+}
+
 #noAccText {
-    margin-top: 7%;
     font-family: 'Century Gothic';
     font-size: 19px;
-    position: absolute;
+    margin-bottom: 2px;
 }
 
 #registerButton {
-    position: absolute;
-    margin-top: 7%;
-    margin-left: 17%;
+    margin-top: 5%;
+    margin-left: 2%;
     color: black;
 }

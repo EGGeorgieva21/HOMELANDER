@@ -15,14 +15,14 @@ public partial class Certificate
     public string Name { get; set; } = null!;
 
     [Column(TypeName = "date")]
-    public DateTime IssuedDate { get; set; }
+    public DateTime? IssuedDate { get; set; }
 
     [Column(TypeName = "date")]
     public DateTime? ExpirationDate { get; set; }
 
-    public int? UserId { get; set; }
+    public int UserId { get; set; }
 
     [ForeignKey("UserId")]
     [InverseProperty("Certificates")]
-    public virtual User? User { get; set; }
+    public virtual User User { get; set; } = null!;
 }

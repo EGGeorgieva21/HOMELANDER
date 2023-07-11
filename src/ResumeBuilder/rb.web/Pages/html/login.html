@@ -2,25 +2,29 @@
 <html>
 <head>
     <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/login.js"></script>
+    <link rel="icon" type="image/x-icon" href="../imgs/HL_icon.ico">
     <title>Login</title>
 </head>
 <body>
     <div class="loginForm">
             <h1 id="loginText">Login</h1>
             <form>
+                <!--Username and password-->
                 <input type="text" class="txtBox" placeholder="Username" name="uname"><br>
                 <br />
-                <input type="password" class="txtBox" placeholder="Password">
+                <input type="password" class="txtBox" id="password"  placeholder="Password">
 
-
-                <input type="checkbox" class="showPassword" name="scales">
+                <!--Show password checkbox-->
+                <input type="checkbox" class="showPassword" onclick="showPassword()" name="scales">
                 <label for="scales" class="showPassword">Show Password</label>
 
-
+                <!--Login button-->
                 <br>
                 <a href="main.html" id="loginButton">Login</a>
                 <br />
 
+                <!--Register button-->
                 <p id="noAccText">No acc?</p>
                 <a href="register.html" id="registerButton">Register</a> <br />
                 <br>

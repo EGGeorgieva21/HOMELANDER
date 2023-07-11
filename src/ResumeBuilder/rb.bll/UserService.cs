@@ -13,29 +13,29 @@ namespace rb.bll
     public class UserService
     {
         private readonly ResumeBuilderContext _context;
-        GenericRepository<User> genericRepository;
+        private readonly GenericRepository<User> genericRepository;
         public UserService()
         {
             _context = new ResumeBuilderContext();
-            genericRepository = new(_context);
+            genericRepository = new GenericRepository<User>(_context);
         }
 
-        public bool RegisterUser(string Username, string Password, string Email)
+        public bool RegisterUser(string username, string password, string email)
         {
             List<User> users = genericRepository.GetAll().ToList();
-            if (users.FirstOrDefault(u => u.Username == Username) != null)
+            if (users.FirstOrDefault(u => u.Username == username) != null)
             {
                 return false;
             }
 
             User user = new User()
             {
-                Username = Username,
-                Email = Email
+                Username = username,
+                Email = email
             };
 
             user.Salt = GenerateSalt();
-            string saltedPassword = Password + user.Salt;
+            string saltedPassword = password + user.Salt;
             user.Password = HashPassword(saltedPassword);
 
             genericRepository.Add(user);
@@ -43,24 +43,23 @@ namespace rb.bll
             return true;
         }
 
-        public bool VerifyUser(string Username, string Password)
+        public User? VerifyUser(string username, string password)
         {
             List<User> users = genericRepository.GetAll().ToList();
-            User user = users.FirstOrDefault(u => u.Username == Username);
+            User? user = users.FirstOrDefault(u => u.Username == username);
 
             if(user == null)
             { 
-                return false; 
+                return null; 
             }
 
-            string saltedPassword = Password + user.Salt;
+            string saltedPassword = password + user.Salt;
             if(user.Password != HashPassword(saltedPassword)) 
             {
-                return false;
+                return null;
             }
-            return true;
+            return user;
         }
-
 
         private string GenerateSalt()
         {
@@ -84,6 +83,5 @@ namespace rb.bll
 
             return hashedPass;
         }
-
     }
 }

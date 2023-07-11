@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rb.bll", "rb.bll\rb.bll.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rb.dal", "rb.dal\rb.dal.csproj", "{C1E40C2A-05FF-4BD4-8094-A3D272F6B069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rb.web", "rb.web\rb.web.csproj", "{35A7DBE4-E5AF-47B1-A1CE-B37839D58C6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rb.web", "rb.web\rb.web.csproj", "{35A7DBE4-E5AF-47B1-A1CE-B37839D58C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rb.api", "rb.api\rb.api.csproj", "{B6D4E3D5-8B86-4285-8EA2-ED0FECD0036F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{35A7DBE4-E5AF-47B1-A1CE-B37839D58C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35A7DBE4-E5AF-47B1-A1CE-B37839D58C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35A7DBE4-E5AF-47B1-A1CE-B37839D58C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D4E3D5-8B86-4285-8EA2-ED0FECD0036F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D4E3D5-8B86-4285-8EA2-ED0FECD0036F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D4E3D5-8B86-4285-8EA2-ED0FECD0036F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D4E3D5-8B86-4285-8EA2-ED0FECD0036F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

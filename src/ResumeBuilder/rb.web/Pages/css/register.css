@@ -21,7 +21,6 @@ body {
     font-size: 37px;
     padding-left: 35.5%;
 }
-
 .txtBox {
     margin-top: 20px;
 
@@ -47,7 +46,6 @@ body {
 
     margin-left: 15%;
     margin-top: 10px;
-
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 26%;
@@ -64,6 +62,7 @@ body {
 
 #backButton {
     text-decoration: none;
+
     border-radius: 12px;
     transition-duration: 0.6s;
 
@@ -85,7 +84,6 @@ body {
         background-color: #5EC17F;
         color: white;
     }
-
 
 
 #templates

@@ -21,12 +21,12 @@ public partial class Education
     [Column(TypeName = "date")]
     public DateTime? ToDate { get; set; }
 
-    public int? UserId { get; set; }
+    public int UserId { get; set; }
 
     [InverseProperty("Education")]
     public virtual ICollection<EducationSkill> EducationSkills { get; set; } = new List<EducationSkill>();
 
     [ForeignKey("UserId")]
     [InverseProperty("Educations")]
-    public virtual User? User { get; set; }
+    public virtual User User { get; set; } = null!;
 }

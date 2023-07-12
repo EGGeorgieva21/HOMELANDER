@@ -1,8 +1,0 @@
-/* BEGIN EXTERNAL SOURCE */
-
-/* END EXTERNAL SOURCE */
-/* BEGIN EXTERNAL SOURCE */
-function name9() {
-
-}
-/* END EXTERNAL SOURCE */

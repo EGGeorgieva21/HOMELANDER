@@ -39,10 +39,9 @@ namespace rb.bll
             user.Password = HashPassword(saltedPassword);
 
             genericRepository.Add(user);
-            User? registeredUser = genericRepository.GetAll().FirstOrDefault(u => u.Username == username);
             _context.SaveChanges();
 
-            return registeredUser;
+            return genericRepository.GetAll().FirstOrDefault(u => u.Username == username);
         }
 
         public User? VerifyUser(string username, string password)

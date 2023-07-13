@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -25,20 +25,6 @@ namespace rb.api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("RegisterUser")]
-        public ActionResult Register([FromBody] RegisterUser registerUser)
-        {
-            User? user = userService.RegisterUser(registerUser.Username, registerUser.Password, registerUser.Email);
-
-            if (user != null)
-            {
-                var token = GenerateToken(user);
-                return Ok(token);
-            }
-            return NotFound("User not found");
-        }
-
-        [AllowAnonymous]
         [HttpPost("LoginUser")]
         public ActionResult Login([FromBody] LoginUser loginUser)
         {
@@ -50,6 +36,20 @@ namespace rb.api.Controllers
                 return Ok(token);
             }
             return NotFound("User not found");
+        }
+
+        [AllowAnonymous]
+        [HttpPost("RegisterUser")]
+        public ActionResult Register([FromBody] RegisterUser registerUser)
+        {
+            User? user = userService.RegisterUser(registerUser.Username, registerUser.Password, registerUser.Email);
+
+            if (user != null)
+            {
+                var token = GenerateToken(user);
+                return Ok(token);
+            }
+            return BadRequest("User already exists");
         }
 
         private string GenerateToken(User user)

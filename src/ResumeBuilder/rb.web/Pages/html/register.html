@@ -12,22 +12,22 @@
             <h1 id="registerText">Register</h1>
             <form>
                 <!--Username, password and confirm password-->
-                <input type="text" class="txtBox" placeholder="Username" name="uname"><br>
-                <input type="password" class="txtBox" id="Password" placeholder="Password"> <br />
-                <input type="password" class="txtBox" id="CPassword" placeholder="Confirm Password">
+                <input type="text" class="txtBox" id="username" placeholder="Username"><br>
+                <input type="email" class="txtBox" id="email" placeholder="Email"> <br />
+                <input type="password" class="txtBox" id="password" placeholder="Password"> <br />
+                <input type="password" class="txtBox" id="cPassword" placeholder="Confirm Password">
 
                 <!--Show password checkbox-->
-                <input type="checkbox" onclick="" class="showPassword" name="scales">
-                <label for="scales" class="showPassword">Show Password</label>
+                <input type="checkbox" onclick="showPassword()" class="showPassword" name="scales">
+                <label class="showPassword"> Show Password </label>
 
-                    <!--Register button-->
-                    <br>
-                
-                    <a href="main.html" id="registerButton">Register</a><br />
-                    <br>
-                    <br />
-                    <!--Back button-->
-                    <a href="login.html" id="backButton">Back</a>
+                <!--Register button-->
+                <br>
+                <a id="registerButton" onclick="register()"> Register </a>  <br />
+                <br>
+                <br />
+                <!--Back button-->
+                <a href="login.html" id="backButton">Back</a>
 
             </form>
         </div>

@@ -11,6 +11,7 @@ function login() {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'text/plain'
+
         },
         body: JSON.stringify({
             "username": username,
@@ -20,6 +21,7 @@ function login() {
         .then(res => {
             if (res.ok) {
                 console.log("Success...");
+                localStorage.setItem('token', res.data)  /* change res.data*/
                 /*window.location.href = "main.html";*/
             } else {
                 console.log("Not successful");

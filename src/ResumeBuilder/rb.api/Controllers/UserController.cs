@@ -33,7 +33,7 @@ namespace rb.api.Controllers
             if(user != null)
             {
                 var token = GenerateToken(user);
-                return Ok(token);
+                return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { token = token }));
             }
             return NotFound("User not found");
         }
@@ -47,7 +47,7 @@ namespace rb.api.Controllers
             if (user != null)
             {
                 var token = GenerateToken(user);
-                return Ok(token);
+                return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { token = token }));
             }
             return BadRequest("User already exists");
         }

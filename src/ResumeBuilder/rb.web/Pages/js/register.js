@@ -23,34 +23,23 @@ function register() {
             "email": email
         })
     })
-        .then(res => {
-            if (res.ok) {
-                if (username == "" || password == "" || email == "") {
-                    console.log("fill all spaces");
-                }
-                else if (password != cPassword) {
-                    console.log("password and confirm password should be the same");
-                }
-                else {
-                    console.log("Success...");
-                    window.location.href = "login.html";
-                }
-            }
-            else
-            {
-                console.log("Not successful");
-            }
-            return res.json();
-        })
-        .then(data => {
+            .then(function (response) {
+            // The API call was successful!
+                if (response.ok) {
+                    return response.json();
+            } else {
+                return Promise.reject(response);
+            }       
+        }).then(function (data) {
+            // This is the JSON from our response
             console.log(data);
+            localStorage.setItem('token', data.token)
+            window.location.href = "main.html";
+        }).catch(function (err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
         })
-        .catch(error => {
-            console.log("Error:", error);
-        });
-}
-
-
+    }
 
 
 //async function getapi(url)

@@ -1,4 +1,4 @@
-﻿using rb.dal.Data;
+using rb.dal.Data;
 using rb.dal.Models;
 using rb.dal.Repositories;
 using System;

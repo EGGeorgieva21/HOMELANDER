@@ -3,12 +3,11 @@
     background-color: aqua;
 }
 
+}
 body {
-
     background-color: white;
     height: 10000px;
     margin: 5px 0 0 0;
-
 }
 /* add button hover */
 
@@ -28,7 +27,6 @@ body {
 #homelanderText {   
     margin-left: 4%;
     padding-top: 2%;
-
 
     font-size: 33px;
     color: ActiveBorder;

@@ -20,12 +20,12 @@ namespace rb.bll
             genericRepository = new GenericRepository<User>(_context);
         }
 
-        public bool RegisterUser(string username, string password, string email)
+        public User? RegisterUser(string username, string password, string email)
         {
             List<User> users = genericRepository.GetAll().ToList();
             if (users.FirstOrDefault(u => u.Username == username) != null)
             {
-                return false;
+                return null;
             }
 
             User user = new User()
@@ -39,8 +39,10 @@ namespace rb.bll
             user.Password = HashPassword(saltedPassword);
 
             genericRepository.Add(user);
+            User? registeredUser = genericRepository.GetAll().FirstOrDefault(u => u.Username == username);
             _context.SaveChanges();
-            return true;
+
+            return registeredUser;
         }
 
         public User? VerifyUser(string username, string password)

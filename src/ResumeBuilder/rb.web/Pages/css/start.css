@@ -1,10 +1,10 @@
 /* test with site scaling*/
 
-/*@media (max-width: 550px) {
+@media (max-width: 550px) {
     body {
         background-color: black;
     }
-}*/
+}
 
 
 body 

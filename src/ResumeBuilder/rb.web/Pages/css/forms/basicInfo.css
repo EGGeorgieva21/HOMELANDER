@@ -1,0 +1,66 @@
+html{
+    overflow: visible;
+}
+body {
+ 
+    margin: 5px 0 0 0;
+}
+
+#topNav {
+    top: 0;
+    position: sticky;
+    padding-top: 1.75%;
+    padding-bottom: 1.75%;
+    box-shadow: 1px 3px 6px#C8D3D6;
+    background-color: white;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 100%;
+}
+
+
+#homelanderText {
+    margin-left: 4%;
+    padding-top: 2%;
+    font-size: 33px;
+    color: ActiveBorder;
+    font-family: 'Baskerville Old Face';
+    text-decoration: none;
+}
+
+#createCVText {
+    margin-top: 5%;
+    
+    margin-left: 9%;
+
+    font-size: 20px;
+    font-weight:100;
+    line-height: 38px;
+    color: #444;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial;
+}
+
+#formAndList
+{
+   margin-top: 50px;
+}
+
+form {
+
+    float: right;
+    background-color: black;
+    margin-right: 17%;
+    padding-left: 40%;
+    padding-bottom: 30%;
+}
+
+ul {
+    float: left;
+    list-style-type: none;
+    margin-left: 13%;
+}
+li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: antiquewhite;
+}

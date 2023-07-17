@@ -64,7 +64,7 @@ namespace rb.bll
                 return false;
             }
 
-            Certificate certificate = genericRepository.GetAll().FirstOrDefault(c => c.Id == certificateId);
+            Certificate? certificate = genericRepository.GetAll().FirstOrDefault(c => c.Id == certificateId);
             if(certificate == null)
             {
                 return false;

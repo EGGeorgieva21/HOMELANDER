@@ -10,10 +10,10 @@ namespace rb.api.Controllers
     [Route("[controller]")]
     public class CertificateController : Controller
     {
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<CertificateController> _logger;
         private readonly CertificateService certificateService;
 
-        public CertificateController(ILogger<UserController> logger)
+        public CertificateController(ILogger<CertificateController> logger)
         {
             _logger = logger;
             certificateService = new CertificateService();
@@ -55,7 +55,7 @@ namespace rb.api.Controllers
             {
                 return Ok(certificates);
             }
-            return BadRequest("Wrong userId or no certificates");
+            return BadRequest("Wrong userId or no certificates added");
         }
     }
 }

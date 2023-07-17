@@ -25,11 +25,37 @@ namespace rb.api.Controllers
         {
             Certificate? certificate = certificateService.AddCertificate(addCertificate.Name, addCertificate.IssuedDate, addCertificate.ExpirationDate, addCertificate.UserId);
 
-            if (certificate != null)
+            if(certificate != null)
             {
-                return Ok("Certificate added");
+                return Ok(certificate);
             }
-            return BadRequest("Wrong input");
+            return BadRequest("Invalid certificate information");
+        }
+
+        [Authorize]
+        [HttpDelete("RemoveCertificate")]
+        public ActionResult RemoveCertificate(int certificateId)
+        {
+            bool flag = certificateService.RemoveCertificate(certificateId);
+
+            if(flag)
+            {
+                return Ok("Certificate removed");
+            }
+            return BadRequest("Invalid id");
+        }
+
+        [Authorize]
+        [HttpGet("GetAllByUserId")]
+        public ActionResult GetAllByUserId(int userId)
+        {
+            List<Certificate>? certificates = certificateService.GetAllByUserId(userId);
+
+            if(certificates != null)
+            {
+                return Ok(certificates);
+            }
+            return BadRequest("Wrong userId or no certificates");
         }
     }
 }

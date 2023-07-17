@@ -62,6 +62,19 @@ namespace rb.bll
             return user;
         }
 
+        public bool DeleteUser(int userId)
+        {
+            User? user = genericRepository.GetAll().FirstOrDefault(c => c.Id == userId);
+            if (user == null)
+            {
+                return false;
+            }
+
+            genericRepository.Remove(user);
+            _context.SaveChanges();
+            return true;
+        }
+
         private string GenerateSalt()
         {
             Random rnd = new Random();

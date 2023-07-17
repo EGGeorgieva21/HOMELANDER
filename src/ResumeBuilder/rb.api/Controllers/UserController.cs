@@ -25,6 +25,20 @@ namespace rb.api.Controllers
         }
 
         [AllowAnonymous]
+        [HttpPost("RegisterUser")]
+        public ActionResult Register([FromBody] RegisterUser registerUser)
+        {
+            User? user = userService.RegisterUser(registerUser.Username, registerUser.Password, registerUser.Email);
+
+            if (user != null)
+            {
+                var token = GenerateToken(user);
+                return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { token = token, user = user }));
+            }
+            return BadRequest("User already exists");
+        }
+
+        [AllowAnonymous]
         [HttpPost("LoginUser")]
         public ActionResult Login([FromBody] LoginUser loginUser)
         {
@@ -38,18 +52,17 @@ namespace rb.api.Controllers
             return NotFound("User not found");
         }
 
-        [AllowAnonymous]
-        [HttpPost("RegisterUser")]
-        public ActionResult Register([FromBody] RegisterUser registerUser)
+        [Authorize]
+        [HttpDelete("DeleteUser")]
+        public ActionResult DeleteUser(int userId)
         {
-            User? user = userService.RegisterUser(registerUser.Username, registerUser.Password, registerUser.Email);
+            bool flag = userService.DeleteUser(userId);
 
-            if (user != null)
+            if (flag)
             {
-                var token = GenerateToken(user);
-                return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { token = token, user = user }));
+                return Ok("User deleted");
             }
-            return BadRequest("User already exists");
+            return BadRequest("Invalid id");
         }
 
         private string GenerateToken(User user)

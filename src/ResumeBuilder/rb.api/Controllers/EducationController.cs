@@ -34,19 +34,6 @@ namespace rb.api.Controllers
         }
 
         [Authorize]
-        [HttpDelete("RemoveEducation")]
-        public ActionResult RemoveCertificate(int certificateId)
-        {
-            bool flag = educationService.RemoveEducation(certificateId);
-
-            if (flag)
-            {
-                return Ok("Education removed");
-            }
-            return BadRequest("Invalid id");
-        }
-
-        [Authorize]
         [HttpGet("GetAllByUserId")]
         public ActionResult GetAllByUserId(int userId)
         {
@@ -70,6 +57,19 @@ namespace rb.api.Controllers
                 return Ok(education);
             }
             return BadRequest("Wrong input");
+        }
+
+        [Authorize]
+        [HttpDelete("RemoveEducation")]
+        public ActionResult RemoveCertificate(int certificateId)
+        {
+            bool flag = educationService.RemoveEducation(certificateId);
+
+            if (flag)
+            {
+                return Ok("Education removed");
+            }
+            return BadRequest("Invalid id");
         }
     }
 }

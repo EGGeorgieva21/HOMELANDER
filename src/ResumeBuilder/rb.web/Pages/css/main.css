@@ -8,7 +8,7 @@ body {
 }
 
 #sidebar {
-    left: -70px;
+    left: -5px;
     top: 0;
     position: sticky;
     opacity: 75%;
@@ -21,18 +21,27 @@ body {
 }
 
     #sidebar img {
-        margin-right: 20%;
+        margin-right: 10px;
     }
-    #sidebar:hover {
-        margin-left: -60px;
-        width: 300px;
-    }
-    #sidebar:hover img{
 
+    #sidebar:hover {
+        transition-duration: 0.4s;
+        margin-left: -40px;
+        width: 250px;
     }
+
+        #sidebar:hover img {
+            margin-left: 10px;
+        }
+
 #usericon {
-    margin-right: 2%;
+    margin-left: 89px;
 }
+
+#loginIcon {
+    margin-left: 75px;
+}
+
 
 .sidebarText {
     display: flex;
@@ -42,6 +51,7 @@ body {
     color: #fff;
     text-decoration: none;
     transition: 0.6s;
+    padding-left: 10px;
 }
 
 .sidebarIcon {
@@ -66,10 +76,9 @@ body {
     border-radius: 40%;
     border: outset aliceblue;
     color: darkslateblue;
-
     margin-bottom: 150px;
     margin-left: 87%;
-
+    margin-right: 2%;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -77,24 +86,53 @@ body {
 #CVBar {
     background-color: black;
     position: absolute;
-    /*border-radius: 25%;*/
+    border-radius: 12px;
     padding: 10px;
-
-    margin-left: 20%;
+    margin-left: 17%;
+    margin-right: 17%;
     margin-top: 35px;
-
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
+    #CVBar img {
+        margin-left: 17%;
+        width: 20%;
+        height: 20%;
+    }
 
 #CVFiles {
     background-color: yellow;
     position: absolute;
+    border-radius: 12px;
+
     padding: 10px;
-    margin-top: 200px;
     margin-left: 20%;
-    padding-left: 30%;
-    padding-right: 30%;
+    margin-right: 20%;
+    margin-top: 250px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
+
+    #CVFiles div a {
+        font-size: 45px;
+        text-align: center;
+
+        margin-left: 8%;
+        margin-bottom: 30px;
+
+        padding-left: 10%;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    #CVFiles div {
+        background-color: aqua;
+        float: left;
+        margin-left: 4%;
+        margin-right: 4%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }

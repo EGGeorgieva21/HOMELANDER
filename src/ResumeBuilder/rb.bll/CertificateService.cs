@@ -40,5 +40,39 @@ namespace rb.bll
 
             return genericRepository.GetAll().FirstOrDefault(u => u.Name == name && u.UserId == userId);
         }
+
+        public List<Certificate>? GetAllByUserId(int userId)
+        {
+            if(userId == 0)
+            {
+                return null;
+            }
+
+            List<Certificate> certificates = new List<Certificate>();
+            certificates = genericRepository
+                .GetAll()
+                .Where(c => c.UserId == userId)
+                .ToList();
+
+            return certificates;
+        }
+
+        public bool RemoveCertificate(int certificateId)
+        {
+            if(certificateId == 0)
+            {
+                return false;
+            }
+
+            Certificate certificate = genericRepository.GetAll().FirstOrDefault(c => c.Id == certificateId);
+            if(certificate == null)
+            {
+                return false;
+            }
+
+            genericRepository.Remove(certificate);
+            _context.SaveChanges();
+            return true;
+        }
     }
 }

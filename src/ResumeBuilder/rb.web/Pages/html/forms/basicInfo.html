@@ -20,28 +20,40 @@
 
     <div id="formAndList">
 
-        <ul>
-            <li>
-                Basic Information
-            </li>
-            <li>
-                Work Experience
-            </li>
-            <li>
-                Qualifications
-            </li>
-            <li>
-                yada yada
-            </li>
-        </ul>
+        <div id="listDiv">
+            <ul>
+                <li class="active">
+                    Basic Information <!--// name of resume-->
+                </li>
+                <li class="inactive">
+                    Work Experience <!--// place fromdate to date--> 
+                </li >
+                <li  class="inactive"> 
+                    Certificates <!--// name, issuee date exp date-->
+                </li>
+                <li class="inactive">
+                    Languages <!--// level advancement--> 
+                </li>
+                <li class="inactive">
+                    skills <!--// - yada yada-->
+                </li>
+                <li class="inactive">
+                    education <!--// place, from date to date--> 
+                </li>
+            </ul>
+        </div>
 
-        <form>
-            <h1> Basic Information </h1>
-            <input type="text" placeholder="Full Name" id="fullName" /><br>
-            <input type="email" placeholder="Email address" id="email" /> <br />
-            <input type="text" placeholder="Phone number" id="phoneNumber" /> <br />
-            <input type="text" placeholder="Address" id="address" /><br />
-        </form>
+        <div id="formDiv">
+            <form>
+                <h1 id="FormbasicInfoText"> Basic Information </h1> <br />
+                <input type="text" placeholder="Full Name" id="fullName" class="formTextbox"/><br>
+                <input type="email" placeholder="Email address" id="email" class="formTextbox" /> <br />
+                <input type="text" placeholder="Phone number" id="phoneNumber" class="formTextbox" /> <br />
+                <input type="text" placeholder="Address" id="address" class="formTextbox" /><br />
+            </form>
+
+        </div>
+       
 
     </div>
    

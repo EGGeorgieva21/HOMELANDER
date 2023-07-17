@@ -1,4 +1,4 @@
-﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
 using rb.dal.Data;
 using rb.dal.Models;
 using rb.dal.Repositories;

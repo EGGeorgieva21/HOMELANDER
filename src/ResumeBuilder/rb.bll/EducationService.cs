@@ -74,5 +74,28 @@ namespace rb.bll
             _context.SaveChanges();
             return true;
         }
+
+        public Education? EditEducation(int id, string place, DateTime? fromDate, DateTime? toDate)
+        {
+            Education? education = genericRepository.GetAll().FirstOrDefault(c => c.Id == id);
+
+            if (education == null)
+            {
+                return null;
+            }
+
+            education.Place = place;
+            education.FromDate = fromDate;
+            education.ToDate = toDate;
+
+            if (genericRepository.GetAll().Count(c => c.Place == place && c.UserId == education.UserId) > 1)
+            {
+                return null;
+            }
+
+            genericRepository.Update(education);
+            _context.SaveChanges();
+            return education;
+        }
     }
 }

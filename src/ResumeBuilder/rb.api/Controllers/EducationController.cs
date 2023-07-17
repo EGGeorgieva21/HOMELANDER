@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using rb.api.ViewModels;
+using rb.api.ViewModels.Certificate;
 using rb.bll;
 using rb.dal.Models;
 
@@ -56,6 +57,19 @@ namespace rb.api.Controllers
                 return Ok(educations);
             }
             return BadRequest("Wrong userId or no educations added");
+        }
+
+        [Authorize]
+        [HttpPatch("EditEducation")]
+        public ActionResult EditEducation(EditEducation editEducation)
+        {
+            Education? education = educationService.EditEducation(editEducation.Id, editEducation.Place, editEducation.FromDate, editEducation.ToDate);
+
+            if (education != null)
+            {
+                return Ok(education);
+            }
+            return BadRequest("Wrong input");
         }
     }
 }

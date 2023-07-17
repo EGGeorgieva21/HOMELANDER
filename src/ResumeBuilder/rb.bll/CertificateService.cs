@@ -74,5 +74,28 @@ namespace rb.bll
             _context.SaveChanges();
             return true;
         }
+
+        public Certificate? EditCertificate(int id, string name, DateTime? issuedDate, DateTime? expirationDate)
+        {
+            Certificate? certificate = genericRepository.GetAll().FirstOrDefault(c => c.Id == id);
+
+            if(certificate == null)
+            {
+                return null;
+            }
+
+            certificate.Name = name;
+            certificate.IssuedDate = issuedDate;
+            certificate.ExpirationDate = expirationDate;
+
+            if(genericRepository.GetAll().Count(c => c.Name == name && c.UserId == certificate.UserId) > 1)
+            {
+                return null;
+            }
+
+            genericRepository.Update(certificate);
+            _context.SaveChanges();
+            return certificate;
+        }
     }
 }

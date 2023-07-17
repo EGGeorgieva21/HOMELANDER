@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using rb.api.ViewModels;
+using rb.api.ViewModels.Certificate;
 using rb.bll;
 using rb.dal.Models;
 
@@ -56,6 +57,19 @@ namespace rb.api.Controllers
                 return Ok(certificates);
             }
             return BadRequest("Wrong userId or no certificates added");
+        }
+
+        [Authorize]
+        [HttpPatch("EditCertificate")]
+        public ActionResult EditCertificate(EditCertificate editCertificate)
+        {
+            Certificate? certificate = certificateService.EditCertificate(editCertificate.Id, editCertificate.Name, editCertificate.IssuedDate, editCertificate.ExpirationDate);
+
+            if(certificate != null)
+            {
+                return Ok(certificate);
+            }
+            return BadRequest("Wrong input");
         }
     }
 }

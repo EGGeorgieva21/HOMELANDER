@@ -4,7 +4,6 @@
 
 <head>
 
-
     <script src="../js/start.js"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="icon" type="image/x-icon" href="../imgs/HL_icon.ico">
@@ -15,50 +14,56 @@
 
 <body>
 
-    <header id="navBar">
-        <a href="login.html">
-            <img src="../imgs/HL_icon.png" alt="Example Image">
-        </a>
-    </header>
+    <div id="CVBar">
+        <img src="../imgs/HL_icon.png">
+        <img src="../imgs/HL_icon.png">
+    </div>
 
-    <form>
-
-        <h1> Basic Information </h1>
-        <input type="text" placeholder="First Name"><br>
-        <input type="email" placeholder="email address"> <br />
-        <input type="text" placeholder="phone number" /> <br />
-        <input type="text" placeholder="websites" />
-        
-
-        <!--Show password checkbox-->
-        <input type="checkbox" class="showPassword" onclick="showPassword()" name="scales">
-        <label for="scales" class="showPassword">Show Password</label>
-
-        <!--Login button-->
-        <a href="main.html" id="loginButton">Login</a>
-        <br />
-        <!--Back Button-->
-
-        <br />
-        <br />
-        <a href="main.html" id="backButton">Back</a>
-        <br>
-        <br>
-        <br>
-        <!-- or lines -->
-        <!--<hr />
-        <a>or</a>
-        <hr />-->
-
-        <div id="registerDiv">
-            <!--Register button-->
-            <p id="noAccText">No account?</p>
-            <a href="register.html" id="registerButton">Register</a>
+    <div id="CVFiles">
+        <div>
+            <a>Test</a>
         </div>
+        <div>
+            <a>Test</a>
+        </div>
+        <div>
+            <a>Test</a>
+        </div>
+        <div>
+            <a>Test</a>
+        </div>
+    </div>
 
-    </form>
+
+    <a href="../html/forms/createCV.html" id="createCVButton">+</a>
 
 
+    <div id="sidebar">
+        <div class="sidebarElements">
+            <a href="#" class="sidebarText">
+                <img src="../imgs/userIcon.png" id="usericon" alt="Icon" class="sidebarIcon">
+                <h3 class="sidebarText">Username</h3>
+            </a>
+        </div>
+        <div class="sidebarElements">
+            <a href="#" class="sidebarText">
+                <img src="../imgs/HL_icon.ico" alt="Icon" class="sidebarIcon" />
+                <h3 class="sidebarText">Test</h3>
+            </a>
+        </div>
+        <div class="sidebarElements">
+            <a href="#" class="sidebarText">
+                <img src="../imgs/HL_icon.ico" alt="Icon" class="sidebarIcon">
+                <h3 class="sidebarText">Test</h3>
+            </a>
+        </div>
+        <div class="sidebarElements">
+            <a href="#" class="sidebarText">
+                <img src="../imgs/logoutLogo.png" alt="Icon" id="loginIcon" class="sidebarIcon">
+                <h3 class="sidebarText">Logout</h3>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>

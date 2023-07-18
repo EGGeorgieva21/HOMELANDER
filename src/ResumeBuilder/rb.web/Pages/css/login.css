@@ -39,7 +39,7 @@ body {
 }
 
 .showPassword {
-    margin-top: 15px;
+    margin-top: 17px;
     margin-bottom: 60px;
 }
 
@@ -87,7 +87,8 @@ body {
     }
 
 #registerDiv * {
-    float: left;  
+    float: left; 
+    margin-left: 30%;
 }
 
 #noAccText {
@@ -99,5 +100,5 @@ body {
 #registerButton {
     margin-top: 5%;
     margin-left: 2%;
-    color: black;
+    color: #007bff;
 }

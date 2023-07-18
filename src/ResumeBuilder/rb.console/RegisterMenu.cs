@@ -31,12 +31,12 @@ namespace rb.console
 
             UserService userService = new UserService();
 
-            if (!userService.RegisterUser(Username, Password, Email))
-            {
-                Console.WriteLine("\nUsername already taken!");
-                Console.ReadKey();
-                Print();
-            }
+            //if (!userService.RegisterUser(Username, Password, Email))
+            //{
+            //    Console.WriteLine("\nUsername already taken!");
+            //    Console.ReadKey();
+            //    Print();
+            //}
 
             Console.WriteLine("\nUser Registered");
             Console.ReadKey();

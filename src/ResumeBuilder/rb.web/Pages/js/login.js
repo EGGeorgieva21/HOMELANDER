@@ -3,9 +3,6 @@ function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    console.log(username);
-    console.log(password);
-
     fetch('https://localhost:7294/User/LoginUser', {
         method: 'POST',
         headers: {
@@ -21,10 +18,11 @@ function login() {
         .then(res => {
             if (res.ok) {
                 console.log("Success...");
-                localStorage.setItem('token', res.data)  /* change res.data*/
-                /*window.location.href = "main.html";*/
+                localStorage.setItem('token', res.data)
+                window.location.href = "main.html";
             } else {
                 console.log("Not successful");
+                window.alert("Invalid login details");
             }
             return res.json();
         })
@@ -37,11 +35,7 @@ function login() {
 }
 
 
-
-
-
 function showPassword() {
-    debugger;
     let id = document.getElementById('password');
     if (id.type === "password") {
         id.type = "text";

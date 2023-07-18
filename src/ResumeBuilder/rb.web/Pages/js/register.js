@@ -21,10 +21,16 @@ function register() {
         .then(res => {
             if (res.ok) {
                 if (username == "" || password == "" || email == "") {
-                    console.log("fill all spaces");
+                    window.alert("fill all spaces");
                 }
                 else if (password != cPassword) {
-                    console.log("password and confirm password should be the same");
+                    window.alert("password and confirm password should be the same");
+                }
+                else if (this.password.length < 8) {
+                    window.alert("password must be atleast 8 characters");
+                }
+                else if (!email.includes("@")) {
+                    window.alert("not a valid email");
                 }
                 else {
                     console.log("Success...");

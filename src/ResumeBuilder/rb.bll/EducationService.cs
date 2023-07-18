@@ -57,24 +57,6 @@ namespace rb.bll
             return educations;
         }
 
-        public bool RemoveEducation(int educationId)
-        {
-            if (educationId == 0)
-            {
-                return false;
-            }
-
-            Education? education = genericRepository.GetAll().FirstOrDefault(c => c.Id == educationId);
-            if (education == null)
-            {
-                return false;
-            }
-
-            genericRepository.Remove(education);
-            _context.SaveChanges();
-            return true;
-        }
-
         public Education? EditEducation(int id, string place, DateTime? fromDate, DateTime? toDate)
         {
             Education? education = genericRepository.GetAll().FirstOrDefault(c => c.Id == id);
@@ -96,6 +78,19 @@ namespace rb.bll
             genericRepository.Update(education);
             _context.SaveChanges();
             return education;
+        }
+
+        public bool RemoveEducation(int educationId)
+        {
+            Education? education = genericRepository.GetAll().FirstOrDefault(c => c.Id == educationId);
+            if (education == null)
+            {
+                return false;
+            }
+
+            genericRepository.Remove(education);
+            _context.SaveChanges();
+            return true;
         }
     }
 }

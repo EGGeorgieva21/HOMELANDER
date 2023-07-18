@@ -1,62 +1,138 @@
-
-#navBar {
-    background-color: aqua;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
-}
 body {
-    background-color: white;
-    height: 10000px;
-    margin: 5px 0 0 0;
+    margin: 0 0 0 0;
 }
-/* add button hover */
 
-#topNav {
+#sidebar {
+    left: -5px;
     top: 0;
     position: sticky;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    box-shadow: 1px 3px 6px#C8D3D6;
-    background-color: white;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    width: 100%;
+    opacity: 75%;
+    transition: 0.25s;
+    margin-top: 30px;
+    width: 50px;
+    background-color: aqua;
+    padding: 20px 5px 225px;
+    overflow: hidden;
 }
 
-
-#homelanderText {   
-    margin-left: 4%;
-    padding-top: 2%;
-
-    font-size: 33px;
-    color: ActiveBorder;
-    font-family: 'Baskerville Old Face';
-    text-decoration: none;
-}
-
-#loginButton {
-    transition-duration: 0.6s;
-    position: fixed;
-    margin-left: 65%;
-    padding: 16px 35px 16px 35px;
-    border-radius: 12px;
-    border: outset aliceblue;
-    color: darkslateblue;
-    font-size: larger;
-    text-decoration: none;
-
-}
-    #loginButton:hover {
-        background-color: aliceblue;
-        box-shadow: 0 0 10px #48abe0;
+    #sidebar img {
+        margin-right: 10px;
     }
 
-#midClearing {
-    margin-top: 42px;
-    margin-right: 7%;
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    background-color: #C9F3FF;
+    #sidebar:hover {
+        transition-duration: 0.4s;
+        margin-left: -40px;
+        width: 250px;
+    }
+
+        #sidebar:hover img {
+            margin-left: 10px;
+        }
+
+#usericon {
+    margin-left: 89px;
 }
+
+#loginIcon {
+    margin-left: 75px;
+}
+
+
+.sidebarText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.6s;
+    padding-left: 10px;
+}
+
+.sidebarIcon {
+    margin-left: 60px;
+    margin-right: 30px;
+    width: 45px;
+    height: 45px;
+}
+
+.sidebarText {
+    text-decoration: none;
+}
+
+.sidebar-item:hover .sidebar-text {
+    display: block;
+}
+
+#createCVButton {
+    text-decoration: none;
+    position: absolute;
+    font-size: 40px;
+    border-radius: 40%;
+    border: outset aliceblue;
+    color: darkslateblue;
+    margin-bottom: 150px;
+    margin-left: 87%;
+    margin-right: 2%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#CVBar {
+    background-color: black;
+    position: absolute;
+    border-radius: 12px;
+    padding: 10px;
+    margin-left: 17%;
+    margin-right: 17%;
+    margin-top: 35px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+    #CVBar img {
+        margin-left: 17%;
+        width: 20%;
+        height: 20%;
+    }
+
+#CVFiles {
+    background-color: yellow;
+    position: absolute;
+    border-radius: 12px;
+
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 250px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+    #CVFiles div a {
+        font-size: 45px;
+        text-align: center;
+
+        margin-left: 8%;
+        margin-bottom: 30px;
+
+        padding-left: 10%;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    #CVFiles div {
+        background-color: aqua;
+        float: left;
+        margin-left: 4%;
+        margin-right: 4%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }

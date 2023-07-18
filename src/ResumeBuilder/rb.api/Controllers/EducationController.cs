@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using rb.api.ViewModels;
-using rb.api.ViewModels.Certificate;
 using rb.bll;
 using rb.dal.Models;
 
@@ -61,9 +60,9 @@ namespace rb.api.Controllers
 
         [Authorize]
         [HttpDelete("RemoveEducation")]
-        public ActionResult RemoveCertificate(int certificateId)
+        public ActionResult RemoveEducation(int educationId)
         {
-            bool flag = educationService.RemoveEducation(certificateId);
+            bool flag = educationService.RemoveEducation(educationId);
 
             if (flag)
             {

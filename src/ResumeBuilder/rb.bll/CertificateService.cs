@@ -22,7 +22,7 @@ namespace rb.bll
 
         public Certificate? AddCertificate(string name, DateTime? issuedDate, DateTime? expirationDate, int userId)
         {
-            if(name.IsNullOrEmpty() || userId == 0 || genericRepository.GetAll().FirstOrDefault(u => u.Name == name && u.UserId == userId) != null)
+            if(name.IsNullOrEmpty() || userId <= 0 || genericRepository.GetAll().FirstOrDefault(u => u.Name == name && u.UserId == userId) != null)
             {
                 return null;
             }
@@ -43,7 +43,7 @@ namespace rb.bll
 
         public List<Certificate>? GetAllByUserId(int userId)
         {
-            if(userId == 0)
+            if(userId <= 0)
             {
                 return null;
             }

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using rb.api.ViewModels;
-using rb.api.ViewModels.Certificate;
 using rb.bll;
 using rb.dal.Models;
 

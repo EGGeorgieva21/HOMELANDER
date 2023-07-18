@@ -22,7 +22,7 @@ namespace rb.bll
 
         public Education? AddEducation(string place, DateTime? fromDate, DateTime? toDate, int userId)
         {
-            if (place.IsNullOrEmpty() || userId == 0 || genericRepository.GetAll().FirstOrDefault(u => u.Place == place && u.UserId == userId) != null)
+            if (place.IsNullOrEmpty() || userId <= 0 || genericRepository.GetAll().FirstOrDefault(u => u.Place == place && u.UserId == userId) != null)
             {
                 return null;
             }
@@ -43,7 +43,7 @@ namespace rb.bll
 
         public List<Education>? GetAllByUserId(int userId)
         {
-            if (userId == 0)
+            if (userId <= 0)
             {
                 return null;
             }

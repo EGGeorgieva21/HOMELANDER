@@ -1,4 +1,4 @@
-﻿namespace rb.api.ViewModels.Certificate
+﻿namespace rb.api.ViewModels
 {
     public class EditCertificate
     {

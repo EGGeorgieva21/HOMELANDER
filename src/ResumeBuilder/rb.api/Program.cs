@@ -17,17 +17,38 @@ namespace rb.api
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ResumeBuilder", Version = "v1" });
-                c.AddSecurityDefinition("token", new OpenApiSecurityScheme
+            builder.Services.AddSwaggerGen(
+                c =>
                 {
-                    Type = SecuritySchemeType.Http,
-                    In = ParameterLocation.Header,
-                    Name = HeaderNames.Authorization,
-                    Scheme = "Bearer"
-                });
-            });
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiPlayground", Version = "v1" });
+                    c.AddSecurityDefinition(
+                    "token",
+                    new OpenApiSecurityScheme
+                    {
+                        Type = SecuritySchemeType.Http,
+                        BearerFormat = "JWT",
+                        Scheme = "Bearer",
+                        In = ParameterLocation.Header,
+                        Name = HeaderNames.Authorization
+                    });
+                    c.AddSecurityRequirement(
+                        new OpenApiSecurityRequirement
+                        {
+                            {
+                                new OpenApiSecurityScheme
+                                {
+                                    Reference = new OpenApiReference
+                                    {
+                                        Type = ReferenceType.SecurityScheme,
+                                        Id = "token"
+                                    },
+                                },
+                                Array.Empty<string>()
+                            }
+                        }
+                    );
+                }
+            );
 
             builder.Services.AddAuthentication(options =>
             {
@@ -48,6 +69,8 @@ namespace rb.api
                     ValidateIssuerSigningKey = true
                 };
             });
+            builder.Services.AddAuthentication();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -60,12 +83,10 @@ namespace rb.api
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseCors(builder => builder
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader());
-
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
             app.MapControllers();
             app.Run();
         }

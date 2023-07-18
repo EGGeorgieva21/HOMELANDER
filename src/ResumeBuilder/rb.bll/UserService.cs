@@ -1,4 +1,4 @@
-﻿using rb.dal.Data;
+using rb.dal.Data;
 using rb.dal.Models;
 using rb.dal.Repositories;
 using System;
@@ -39,10 +39,9 @@ namespace rb.bll
             user.Password = HashPassword(saltedPassword);
 
             genericRepository.Add(user);
-            User? registeredUser = genericRepository.GetAll().FirstOrDefault(u => u.Username == username);
             _context.SaveChanges();
 
-            return registeredUser;
+            return genericRepository.GetAll().FirstOrDefault(u => u.Username == username);
         }
 
         public User? VerifyUser(string username, string password)
@@ -61,6 +60,19 @@ namespace rb.bll
                 return null;
             }
             return user;
+        }
+
+        public bool DeleteUser(int userId)
+        {
+            User? user = genericRepository.GetAll().FirstOrDefault(c => c.Id == userId);
+            if (user == null)
+            {
+                return false;
+            }
+
+            genericRepository.Remove(user);
+            _context.SaveChanges();
+            return true;
         }
 
         private string GenerateSalt()

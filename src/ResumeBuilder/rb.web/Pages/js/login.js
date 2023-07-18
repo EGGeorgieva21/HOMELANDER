@@ -15,25 +15,23 @@ function login() {
             "password": password,
         })
     })
-        .then(res => {
-            if (res.ok) {
-                console.log("Success...");
-                localStorage.setItem('token', res.data)
-                window.location.href = "main.html";
+    .then(function (response) {
+            // The API call was successful!
+            if (response.ok) {
+                return response.json();
             } else {
-                console.log("Not successful");
-                window.alert("Invalid login details");
+                return Promise.reject(response);
             }
-            return res.json();
-        })
-        .then(data => {
+        }).then(function (data) {
+            // This is the JSON from our response
             console.log(data);
+            localStorage.setItem('token', data.token)
+            window.location.href = "main.html";
+        }).catch(function (err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
         })
-        .catch(error => {
-            console.log("Error:", error);
-        });
 }
-
 
 function showPassword() {
     let id = document.getElementById('password');

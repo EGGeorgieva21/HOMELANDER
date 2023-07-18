@@ -3,9 +3,6 @@ function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    console.log(username);
-    console.log(password);
-
     fetch('https://localhost:7294/User/LoginUser', {
         method: 'POST',
         headers: {
@@ -18,7 +15,7 @@ function login() {
             "password": password,
         })
     })
-        .then(function (response) {
+    .then(function (response) {
             // The API call was successful!
             if (response.ok) {
                 return response.json();
@@ -36,10 +33,7 @@ function login() {
         })
 }
 
-
-
 function showPassword() {
-    debugger;
     let id = document.getElementById('password');
     if (id.type === "password") {
         id.type = "text";

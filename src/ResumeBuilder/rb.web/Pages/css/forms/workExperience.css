@@ -2,6 +2,7 @@ html {
     overflow: visible;
     background-color: #e0e0e0;
 }
+
 body {
     margin: 5px 0 0 0;
 }
@@ -30,25 +31,21 @@ body {
 #createCVText {
     margin-top: 5%;
     margin-left: 9%;
-
     font-size: 20px;
-    font-weight:100;
+    font-weight: 100;
     line-height: 38px;
     color: #444;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial;
 }
 
-#formAndList
-{
+#formAndList {
     background-color: white;
-   margin-top: 50px;
-   margin-bottom: 400px;
-   margin-left: 7%;
-
+    margin-top: 50px;
+    margin-bottom: 400px;
+    margin-left: 7%;
 }
 /*#e5e7eb*/
 #formDiv {
-   
     border-radius: 12px;
     box-shadow: 1px 3px 6px #C8D3D6;
     float: left;
@@ -57,22 +54,23 @@ body {
     padding-bottom: 6%;
     background-color: white;
 }
+
 form {
     margin-left: 30%;
     margin-top: 6%;
-
     padding-right: 20%;
+}
 
-}
 img {
-   position: absolute;
-   margin-left: 29%;
-   margin-top: 7%;
-   opacity: 90%;
-   border-radius: 14px;
-   width: 500px;
-   transform: rotate(90deg);
+    position: absolute;
+    margin-left: 29%;
+    margin-top: 7%;
+    opacity: 90%;
+    border-radius: 14px;
+    width: 500px;
+    transform: rotate(90deg);
 }
+
 #FormbasicInfoText {
     float: left;
     margin-left: 13%;
@@ -82,12 +80,10 @@ img {
 .formTextbox {
     margin-top: 10px;
     margin-bottom: 30px;
-
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 3%;
     padding-right: 67%;
-
     border-color: beige;
     font-family: 'Century Gothic';
     width: 180%;
@@ -97,7 +93,6 @@ img {
 .label {
     font-family: 'Agency FB';
     font-size: 1.4vw;
-
 }
 
 
@@ -114,7 +109,6 @@ img {
 
 
 #listDiv {
-
     background-color: white;
     list-style-type: none;
     border-top-left-radius: 12px;
@@ -125,7 +119,6 @@ img {
 }
 
     #listDiv p {
-
         color: #200E32;
         font: 24px;
         font-family: Proxima Nova;
@@ -139,10 +132,9 @@ img {
             color: black;
         }
 
-#listDiv p:nth-child(1) {
-    color: black;
-    font-weight: 600;
-
-    padding-left: 10%;
-    background-color: deepskyblue;
-}
+        #listDiv p:nth-child(2) {
+            color: black;
+            font-weight: 600;
+            padding-left: 10%;
+            background-color: deepskyblue;
+        }

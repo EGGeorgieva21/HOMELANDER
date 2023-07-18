@@ -18,7 +18,7 @@ function register() {
             "email": email
         })
     })
-            .then(function (response) {
+    .then(function (response) {
             // The API call was successful!
                 if (response.ok) {
                     return response.json();
@@ -26,12 +26,10 @@ function register() {
                 return Promise.reject(response);
             }       
         }).then(function (data) {
-            // This is the JSON from our response
             console.log(data);
             localStorage.setItem('token', data.token)
             window.location.href = "main.html";
         }).catch(function (err) {
-            // There was an error
             console.warn('Something went wrong.', err);
         })
     }

@@ -19,27 +19,37 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+#createCVButton:hover{
+    background-color: aliceblue;
+    transition: 0.6s;
+}
+
+
+
+
 
 #CVBar {
-    background-color: black;
-    position: absolute;
-    border-radius: 12px;
     margin-left: 17%;
     margin-right: 17%;
     margin-top: 35px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+
+    padding-top: 20px;
     padding-left: 5%;
     padding-right: 5%;
+
+
+    background-color: cadetblue;
+    border: 0.6px solid black;
+    position: absolute;
+    border-radius: 12px;
 }
     #CVBar img {
-        margin-left: 5%;
         width: 10%;
-        height: 10%;
     }
     #CVBar div * {
         float: left;
-        background-color: cadetblue;
+        margin-bottom:  10px;
+        margin-left: 3%;
     }
 
 #CVFiles {
@@ -79,12 +89,13 @@ body {
     position: sticky;
     opacity: 95%;
     margin-top: 30px;
-    width: 50px;
-    transition-duration: 0.25s;
+    width: 57px;
+    transition-duration: 0.5s;
     background-color: aqua;
     padding: 20px 5px 225px;
-    margin-bottom: 100%;
     overflow: hidden;
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
 }
 
     #sidebar img {
@@ -97,12 +108,12 @@ body {
 
     #sidebar:hover {
         transition-duration: 0.5s;
-        width: 250px;
+        width: 230px;
     }
 
 
 #usericon {
-    margin-left: 89px;
+    margin-left: 79px;
 }
 
 #loginIcon {

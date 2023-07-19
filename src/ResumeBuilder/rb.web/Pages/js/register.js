@@ -18,40 +18,21 @@ function register() {
             "email": email
         })
     })
-        .then(res => {
-            if (res.ok) {
-                if (username == "" || password == "" || email == "") {
-                    window.alert("fill all spaces");
-                }
-                else if (password != cPassword) {
-                    window.alert("password and confirm password should be the same");
-                }
-                else if (this.password.length < 8) {
-                    window.alert("password must be atleast 8 characters");
-                }
-                else if (!email.includes("@")) {
-                    window.alert("not a valid email");
-                }
-                else {
-                    console.log("Success...");
-                    window.location.href = "login.html";
-                }
-            }
-            else
-            {
-                console.log("Not successful");
-            }
-            return res.json();
-        })
-        .then(data => {
+    .then(function (response) {
+            // The API call was successful!
+                if (response.ok) {
+                    return response.json();
+            } else {
+                return Promise.reject(response);
+            }       
+        }).then(function (data) {
             console.log(data);
+            localStorage.setItem('token', data.token)
+            window.location.href = "main.html";
+        }).catch(function (err) {
+            console.warn('Something went wrong.', err);
         })
-        .catch(error => {
-            console.log("Error:", error);
-        });
-}
-
-
+    }
 
 
 function showPassword() {

@@ -10,6 +10,7 @@ public partial class Template
 {
     [Key]
     public int Id { get; set; }
+    public int UserId { get; set; }
 
     [InverseProperty("Template")]
     public virtual ICollection<Resume> Resumes { get; set; } = new List<Resume>();

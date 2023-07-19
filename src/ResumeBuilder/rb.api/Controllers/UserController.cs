@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -33,9 +33,9 @@ namespace rb.api.Controllers
             if (user != null)
             {
                 var token = GenerateToken(user);
-                return Ok(token);
+                return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { token = token, user = user }));
             }
-            return NotFound("User not found");
+            return BadRequest("User already exists");
         }
 
         [AllowAnonymous]
@@ -47,9 +47,22 @@ namespace rb.api.Controllers
             if(user != null)
             {
                 var token = GenerateToken(user);
-                return Ok(token);
+                return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { token = token, user = user }));
             }
             return NotFound("User not found");
+        }
+
+        [Authorize]
+        [HttpDelete("DeleteUser")]
+        public ActionResult DeleteUser(int userId)
+        {
+            bool flag = userService.DeleteUser(userId);
+
+            if (flag)
+            {
+                return Ok("User deleted");
+            }
+            return BadRequest("Invalid id");
         }
 
         private string GenerateToken(User user)

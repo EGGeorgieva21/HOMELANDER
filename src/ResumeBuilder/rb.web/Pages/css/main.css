@@ -1,6 +1,5 @@
-html
-{
-    background-color: white;    
+html {
+    background-color: #e0e0e0;
 }
 body {
     margin: 0 0 0 0;
@@ -8,13 +7,13 @@ body {
 
 
 #sidebar {
-    position: sticky;
+    position: fixed;
     opacity: 95%;
     margin-top: 30px;
     width: 57px;
     transition-duration: 0.5s;
     background-color: #00f9ff;
-    padding: 20px 5px 225px;
+    padding: 20px 5px 330px;
     overflow: hidden;
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
@@ -75,16 +74,18 @@ body {
 
 #createCVButton {
     text-decoration: none;
-    position: absolute;
+    position: fixed;
     font-size: 40px;
     border-radius: 40%;
     border: outset aliceblue;
     color: darkslateblue;
     margin-bottom: 150px;
-    margin-left: 87%;
-    margin-right: 2%;
+    margin-left: 4%;
     padding-left: 15px;
     padding-right: 15px;
+
+    background-color: white;
+    opacity: 95%;
 }
 #createCVButton:hover{
     background-color: aliceblue;
@@ -102,15 +103,16 @@ body {
     margin-left: 17%;
     margin-right: 17%;
     margin-top: 35px;
-    padding-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
     padding-left: 5%;
     padding-right: 5%;
     /*background: linear-gradient(to left top, rgba(0, 255, 255, 1) 0%*/ /*bottom-right color*//*, rgba(255, 0, 255, 0.5) 50%*/ /*middle color*//*, rgba(255, 255, 0, 1) 100%*/ /*top-left color*/ /*), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1))*/ /*"faked" black background make sure to add last or it will appear before the transparent/colored layer*//*;*/
 
     /*    background: linear-gradient(to left top, #00f9ff 0% /bottom-right color/, #0900ff 100% /top-left color/ ), linear-gradient(rgb(143,252,255),rgb(143,196,255));*/
     /*  background-color: #8ffcff;*/
-    border: 0.6px solid black;
-    position: absolute;
+    background-color: white;
+    opacity: 94%;
     border-radius: 12px;
 }
     #CVTop img {
@@ -129,13 +131,15 @@ body {
 
 /*bot side*/
 #CVBot {
-   /* background-color: #00f9ff;*/
+    /* background-color: #00f9ff;*/
+    background-color: white;
+   
     opacity: 90%;
-    position: absolute;
     border-radius: 12px;
     min-width: 750px;
     margin-left: 13%;
     margin-top: 270px;
+    margin-bottom: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 5%;

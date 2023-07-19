@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace rb.dal.Models;
 
-[Index("Username", Name = "UQ__Users__536C85E47D2C650D", IsUnique = true)]
+[Index("Username", Name = "UQ__Users__536C85E4DAB2AD31", IsUnique = true)]
 public partial class User
 {
     [Key]
@@ -46,6 +46,9 @@ public partial class User
 
     [InverseProperty("User")]
     public virtual ICollection<Resume> Resumes { get; set; } = new List<Resume>();
+
+    [InverseProperty("User")]
+    public virtual ICollection<Template> Templates { get; set; } = new List<Template>();
 
     [InverseProperty("User")]
     public virtual ICollection<UserLanguage> UserLanguages { get; set; } = new List<UserLanguage>();

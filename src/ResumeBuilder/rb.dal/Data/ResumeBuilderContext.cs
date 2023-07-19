@@ -46,7 +46,7 @@ public partial class ResumeBuilderContext : DbContext
     {
         modelBuilder.Entity<Certificate>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Certific__3214EC073BC0B2EA");
+            entity.HasKey(e => e.Id).HasName("PK__Certific__3214EC075E8ADAEF");
 
             entity.HasOne(d => d.User).WithMany(p => p.Certificates)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -55,7 +55,7 @@ public partial class ResumeBuilderContext : DbContext
 
         modelBuilder.Entity<Education>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC07C80DB5BD");
+            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC07C5E3F05D");
 
             entity.HasOne(d => d.User).WithMany(p => p.Educations)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -64,7 +64,7 @@ public partial class ResumeBuilderContext : DbContext
 
         modelBuilder.Entity<EducationSkill>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC070D9A000E");
+            entity.HasKey(e => e.Id).HasName("PK__Educatio__3214EC078C0CC491");
 
             entity.HasOne(d => d.Education).WithMany(p => p.EducationSkills)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -77,40 +77,42 @@ public partial class ResumeBuilderContext : DbContext
 
         modelBuilder.Entity<Language>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Language__3214EC070AA69293");
+            entity.HasKey(e => e.Id).HasName("PK__Language__3214EC0734E85905");
         });
 
         modelBuilder.Entity<Resume>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Resume__3214EC07DBD78C75");
+            entity.HasKey(e => e.Id).HasName("PK__Resumes__3214EC07A0657928");
 
             entity.HasOne(d => d.Template).WithMany(p => p.Resumes)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Resume__Template__571DF1D5");
+                .HasConstraintName("FK__Resumes__Templat__5812160E");
 
             entity.HasOne(d => d.User).WithMany(p => p.Resumes)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Resume__UserId__5629CD9C");
+                .HasConstraintName("FK__Resumes__UserId__571DF1D5");
         });
 
         modelBuilder.Entity<Skill>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Skills__3214EC074DECEFC8");
+            entity.HasKey(e => e.Id).HasName("PK__Skills__3214EC0729C99501");
         });
 
         modelBuilder.Entity<Template>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Template__3214EC07D599A14E");
+            entity.HasKey(e => e.Id).HasName("PK__Template__3214EC07429DBBF5");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Templates).HasConstraintName("FK__Templates__UserI__5441852A");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07F886BD66");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC0723A272AA");
         });
 
         modelBuilder.Entity<UserLanguage>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserLang__3214EC07CD78D645");
+            entity.HasKey(e => e.Id).HasName("PK__UserLang__3214EC07EB7731C4");
 
             entity.HasOne(d => d.Language).WithMany(p => p.UserLanguages)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -123,7 +125,7 @@ public partial class ResumeBuilderContext : DbContext
 
         modelBuilder.Entity<UserSkill>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserSkil__3214EC07F32BA6AD");
+            entity.HasKey(e => e.Id).HasName("PK__UserSkil__3214EC076A421B36");
 
             entity.HasOne(d => d.Skill).WithMany(p => p.UserSkills)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -136,7 +138,7 @@ public partial class ResumeBuilderContext : DbContext
 
         modelBuilder.Entity<WorkExperience>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__WorkExpe__3214EC07E056559E");
+            entity.HasKey(e => e.Id).HasName("PK__WorkExpe__3214EC075C603F77");
 
             entity.HasOne(d => d.User).WithMany(p => p.WorkExperiences)
                 .OnDelete(DeleteBehavior.ClientSetNull)

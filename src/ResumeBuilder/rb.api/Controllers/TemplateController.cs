@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using rb.api.ViewModels;
-using rb.api.ViewModels.Certificate;
 using rb.bll;
 using rb.dal.Models;
 
@@ -22,54 +21,41 @@ namespace rb.api.Controllers
 
         [Authorize]
         [HttpPost("AddTemplate")]
-        public ActionResult AddTemplate(AddTemplate addTemplate)
+        public ActionResult AddTemplate(int userId)
         {
-            Template? template = templateService.AddTemplate(addTemplate.Id, addTemplate.UserId);
+            bool flag = templateService.AddTemplate(userId);
 
-            if (template != null)
+            if (flag)
             {
-                return Ok(template);
+                return Ok("Template created");
             }
             return BadRequest("Invalid template information");
         }
 
         [Authorize]
         [HttpDelete("RemoveTemplate")]
-        public ActionResult RemoveCertificate(int certificateId)
+        public ActionResult RemoveTemplate(int certificateId)
         {
             bool flag = templateService.RemoveTemplate(certificateId);
 
             if (flag)
             {
-                return Ok("Education removed");
+                return Ok("Template removed");
             }
             return BadRequest("Invalid id");
         }
 
         [Authorize]
-        [HttpGet("GetAllByUserId")]
-        public ActionResult GetAllByUserId(int userId)
+        [HttpGet("GetAllTemplates")]
+        public ActionResult GetAllTemplates()
         {
-            List<Template>? templates = templateService.GetAllByUserId(userId);
+            List<Template>? templates = templateService.GetAllTemplates();
 
             if (templates != null)
             {
                 return Ok(templates);
             }
-            return BadRequest("Wrong userId or no templates added");
-        }
-
-        [Authorize]
-        [HttpPatch("EditTemplate")]
-        public ActionResult EditTemplate(EditTemplate editTemplate)
-        {
-            Template? template = templateService.EditTemplate(editTemplate.Id);
-
-            if (template != null)
-            {
-                return Ok(template);
-            }
-            return BadRequest("Wrong input");
+            return BadRequest("No templates added");
         }
     }
 }

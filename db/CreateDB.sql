@@ -68,11 +68,69 @@ CREATE TABLE [UserLanguages] (
 );
 
 CREATE TABLE [Templates] (
-	[Id] int PRIMARY KEY IDENTITY(1,1)
+	[Id] int PRIMARY KEY IDENTITY(1,1),
+	[UserId] int FOREIGN KEY REFERENCES Users(Id)
 );
 
-CREATE TABLE [Resume] (
+CREATE TABLE [Resumes] (
 	[Id] int PRIMARY KEY IDENTITY(1,1),
+	[Summary] nvarchar(255),
 	[UserId] int FOREIGN KEY REFERENCES Users(Id) NOT NULL,
 	[TemplateId] int FOREIGN KEY REFERENCES Templates(Id) NOT NULL
 );
+
+INSERT INTO [Skills]
+VALUES
+    ('Programming'),
+    ('Database Management'),
+    ('Web Development'),
+    ('Data Analysis'),
+    ('Project Management'),
+    ('Machine Learning'),
+    ('Graphic Design'),
+    ('Network Administration'),
+    ('Digital Marketing'),
+    ('Content Writing'),
+    ('UI/UX Design'),
+    ('Mobile App Development'),
+    ('Cloud Computing'),
+    ('Business Intelligence'),
+    ('Salesforce'),
+    ('Video Editing'),
+    ('Quality Assurance'),
+    ('Cybersecurity'),
+    ('Agile Methodology'),
+    ('IT Support'),
+    ('Public Speaking'),
+    ('Social Media Management'),
+    ('Copywriting'),
+    ('Product Management'),
+    ('Data Science');
+
+INSERT INTO [Languages]
+VALUES
+    ('English'),
+    ('Bulgarian'),
+    ('Spanish'),
+    ('French'),
+    ('Chinese'),
+    ('German'),
+    ('Russian'),
+    ('Japanese'),
+    ('Arabic'),
+    ('Portuguese'),
+    ('Italian'),
+    ('Dutch'),
+    ('Korean'),
+    ('Turkish'),
+    ('Swedish'),
+    ('Greek'),
+    ('Hebrew'),
+    ('Thai'),
+    ('Vietnamese'),
+    ('Hindi'),
+    ('Indonesian'),
+    ('Finnish'),
+    ('Danish'),
+    ('Norwegian'),
+    ('Polish');

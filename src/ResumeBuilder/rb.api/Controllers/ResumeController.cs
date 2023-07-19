@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using rb.api.ViewModels;
-using rb.api.ViewModels.Certificate;
 using rb.bll;
 using rb.dal.Models;
 
@@ -24,7 +23,7 @@ namespace rb.api.Controllers
         [HttpPost("AddResume")]
         public ActionResult AddResume(AddResume addResume)
         {
-            Resume? resume = resumeService.AddResume(addResume.UserId, addResume.TemplateId);
+            Resume? resume = resumeService.CreateResume(addResume.Summary, addResume.UserId, addResume.TemplateId);
 
             if (resume != null)
             {
@@ -43,14 +42,14 @@ namespace rb.api.Controllers
             {
                 return Ok(resumes);
             }
-            return BadRequest("Wrong userId or no resumes added");
+            return BadRequest("Wrong userId or no resumes created");
         }
 
         [Authorize]
         [HttpPatch("EditResume")]
         public ActionResult EditResume(EditResume editResume)
         {
-            Resume? resume = resumeService.EditResume(editResume.Id, editResume.UserId, editResume.TemplateId);
+            Resume? resume = resumeService.EditResume(editResume.Id, editResume.Summary);
 
             if (resume != null)
             {
@@ -67,7 +66,7 @@ namespace rb.api.Controllers
 
             if (flag)
             {
-                return Ok("Certificate removed");
+                return Ok("Resume removed");
             }
             return BadRequest("Invalid id");
         }

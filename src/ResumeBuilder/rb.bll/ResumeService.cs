@@ -20,28 +20,28 @@ namespace rb.bll
             genericRepository = new GenericRepository<Resume>(_context);
         }
 
-        public Resume? AddResume(int userId, int templateId)
+        public Resume? CreateResume(string summary, int userId, int templateId)
         {
-            if (userId == 0)
+            if (userId <= 0 || templateId <= 0)
             {
                 return null;
             }
 
             Resume resume = new Resume()
             {
+                Summary = summary,
                 UserId = userId,
                 TemplateId = templateId
             };
 
             genericRepository.Add(resume);
             _context.SaveChanges();
-
-            return genericRepository.GetAll().FirstOrDefault(u => u.UserId == userId);
+            return genericRepository.GetAll().FirstOrDefault(r => r.Summary == summary && r.UserId == userId && r.TemplateId == templateId);
         }
 
         public List<Resume>? GetAllByUserId(int userId)
         {
-            if (userId == 0)
+            if (userId <= 0)
             {
                 return null;
             }
@@ -49,25 +49,22 @@ namespace rb.bll
             List<Resume> resumes = new List<Resume>();
             resumes = genericRepository
                 .GetAll()
-                .Where(c => c.UserId == userId)
+                .Where(r => r.UserId == userId)
                 .ToList();
 
             return resumes;
         }
 
-        public Resume? EditResume(int id, int userId, int templateId)
+        public Resume? EditResume(int id, string summary)
         {
-            Resume? resume = genericRepository.GetAll().FirstOrDefault(c => c.Id == id);
+            Resume? resume = genericRepository.GetAll().FirstOrDefault(r => r.Id == id);
 
             if (resume == null)
             {
                 return null;
             }
 
-            if (genericRepository.GetAll().Count(c => c.UserId == resume.UserId && c.TemplateId == resume.TemplateId) > 1)
-            {
-                return null;
-            }
+            resume.Summary = summary;
 
             genericRepository.Update(resume);
             _context.SaveChanges();

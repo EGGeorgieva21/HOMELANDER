@@ -19,7 +19,7 @@ namespace rb.bll
             genericRepository = new GenericRepository<UserLanguage>(_context);
         }
 
-        public UserLanguage? AddUserLanguage(int userId, int languageId)
+        public UserLanguage? AddUserLanguage(int userId, int languageId, string advanceLevel)
         {
             if (userId <= 0 || languageId <= 0 || genericRepository.GetAll().FirstOrDefault(es => es.UserId == userId && es.LanguageId == languageId) != null)
             {
@@ -29,7 +29,8 @@ namespace rb.bll
             UserLanguage userLanguage = new UserLanguage()
             {
                 UserId = userId,
-                LanguageId = languageId
+                LanguageId = languageId,
+                AdvanceLevel = advanceLevel
             };
 
             if (userLanguage == null)

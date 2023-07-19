@@ -23,7 +23,7 @@ namespace rb.api.Controllers
         [HttpPost("AddUserLanguage")]
         public ActionResult AddUserLanguage(AddUserLanguage addUserLanguage)
         {
-            UserLanguage? userLanguage = educationSkillService.AddUserLanguage(addUserLanguage.UserId, addUserLanguage.LanguageId);
+            UserLanguage? userLanguage = educationSkillService.AddUserLanguage(addUserLanguage.UserId, addUserLanguage.LanguageId, addUserLanguage.AdvanceLevel);
 
             if (userLanguage != null)
             {

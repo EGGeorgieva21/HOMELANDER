@@ -1,109 +1,34 @@
-html, body {
-    height: fit-content;
+html {
+    background-color: #e0e0e0;
 }
-
 body {
     margin: 0 0 0 0;
 }
 
-#createCVButton {
-    text-decoration: none;
-    position: absolute;
-    font-size: 40px;
-    border-radius: 40%;
-    border: outset aliceblue;
-    color: darkslateblue;
-    margin-bottom: 150px;
-    margin-left: 87%;
-    margin-right: 2%;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-#createCVButton:hover{
-    background-color: aliceblue;
-    transition: 0.6s;
-}
 
-
-
-
-
-#CVBar {
-    margin-left: 17%;
-    margin-right: 17%;
-    margin-top: 35px;
-
-    padding-top: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
-
-
-    background-color: cadetblue;
-    border: 0.6px solid black;
-    position: absolute;
-    border-radius: 12px;
-}
-    #CVBar img {
-        width: 10%;
-    }
-    #CVBar div * {
-        float: left;
-        margin-bottom:  10px;
-        margin-left: 3%;
-    }
-
-#CVFiles {
-    background-color: yellow;
-    word-break: break-all;
-    position: absolute;
-    border-radius: 12px;
-
-    min-width: 750px;
-
-    padding: 10px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 250px;
-
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-    #CVFiles div a {
-        color: black;
-        text-decoration: none;
-        font-size: 3vw;
-        text-align: center;
-        padding-left: 1.5%;
-    }
-    #CVFiles div {
-        box-shadow: 1px 3px 6px #857f44;
-        background-color: #f5f5dc;
-        border-radius: 6px;
-        float: unset;
-        margin-bottom: 25px;
-    }
 #sidebar {
-    position: sticky;
-    opacity: 95%;
-    margin-top: 30px;
+    position: fixed;
+    margin-top: 2%;
     width: 57px;
+    z-index: 1;
     transition-duration: 0.5s;
-    background-color: aqua;
-    padding: 20px 5px 225px;
+    border: solid 5px #00f9ff;
+    border-left: none;
+    background-color: white;
+    padding: 20px 5px 330px;
     overflow: hidden;
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
+    
 }
 
-    #sidebar img {
-        margin-right: 10px;
+    #sidebar a {
+        margin-left: 10px;
     }
-    #sidebar:hover img {
+
+    #sidebar:hover a {
+        margin-left : -70px;
         transition-duration: 0.5s;
-        margin-left: -10px;
     }
 
     #sidebar:hover {
@@ -118,6 +43,7 @@ body {
 
 #loginIcon {
     margin-left: 75px;
+    color: red;
 }
 
 
@@ -126,7 +52,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    color: #fff;
+    color: #00bbbf;
     text-decoration: none;
     transition: 0.6s;
     padding-left: 10px;
@@ -136,21 +62,140 @@ body {
     margin-left: 60px;
     margin-right: 30px;
     width: 45px;
-    height: 45px;
 }
 
 .sidebarText {
     text-decoration: none;
 }
-
+/*
 .sidebar-item:hover .sidebar-text {
     display: block;
+} 
+    this dont do nothin pt3
+*/
+
+
+
+#createCVButton {
+    text-decoration: none;
+    position: fixed;
+    font-size: 40px;
+    border-radius: 40%;
+    border: outset aliceblue;
+    color: darkslateblue;
+    margin-bottom: 150px;
+    margin-left: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    background-color: white;
+    opacity: 95%;
 }
+#createCVButton:hover{
+    background-color: aliceblue;
+    transition: 0.6s;
+}
+
+
+
+
+
+
+
+
+#CVTop {
+    margin-left: 17%;
+    margin-right: 17%;
+    margin-top: 35px;
+    padding-top: 30px;
+    padding-bottom: 140px;
+    padding-left: 5%;
+    padding-right: 5%;
+    /*background: linear-gradient(to left top, rgba(0, 255, 255, 1) 0%*/ /*bottom-right color*//*, rgba(255, 0, 255, 0.5) 50%*/ /*middle color*//*, rgba(255, 255, 0, 1) 100%*/ /*top-left color*/ /*), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1))*/ /*"faked" black background make sure to add last or it will appear before the transparent/colored layer*//*;*/
+
+    /*    background: linear-gradient(to left top, #00f9ff 0% /bottom-right color/, #0900ff 100% /top-left color/ ), linear-gradient(rgb(143,252,255),rgb(143,196,255));*/
+    /*  background-color: #8ffcff;*/
+    background-color: white;
+    opacity: 94%;
+    border-radius: 12px;
+}
+    #CVTop img {
+        width: 12%;
+    }
+    #CVTop div * {
+        float: left;
+        margin-bottom:  10px;
+        margin-left: 3%;
+    }
+     #CVTop div:first-child
+     {
+         margin-left: 1%;
+     }
+
+
+
+
+
+
+/*bot side*/
+#CVBot {
+    /* background-color: #00f9ff;*/
+    background-color: white;
+   
+    opacity: 90%;
+    border-radius: 12px;
+    margin: 80px 8% 50px 9%;
+
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 21%;
+ 
+}
+    
+    #CVBot div {
+        /*box-shadow: 1px -5px 6px #857f44;*/
+        border-top:solid 1px lightgrey;
+        
+/*        float: unset;  this sh dont change nun?? */
+        margin-bottom: 25px;
+        margin-left: 6%;
+    }
+
+#CVBot div:first-child {
+    border-top: none;
+}
+    #CVBot div:first-child ul {
+        list-style: none;
+    }
+    #CVBot div:first-child li {
+        float: left;
+    }
+        #CVBot div:first-child li:first-child {
+            margin-right: 70%;
+        }
+        #CVBot div:first-child li:nth-child(2){
+            margin-right: 3%;
+        }
+    #CVBot div a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.4vw;
+            /*text-align: center;  don't change nun pt 2*/
+            padding-left: 1.5%;
+    }
 
 
 @media (max-width: 1500px) {
 
-    #CVFiles {
+    #CVBot {
         min-width: 50px;
     }
 }
+
+
+
+
+
+
+

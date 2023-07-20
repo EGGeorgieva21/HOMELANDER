@@ -1,7 +1,6 @@
 
 body 
 {
-    height: 10000px;
     margin: 5px 0 0 0;
 }
 
@@ -69,18 +68,21 @@ body
 }
 
 
-#templatesDiv * {
+
+
+
+#templatesDiv div {
     float: left;
 }
 
-#templatesDiv {
+/*#templatesDiv {
     margin-top: 45px;
     margin-left: 25%;
     margin-right: 25%
-}
-.templates {
-    margin-left: 1.25%;
-    margin-top: 3.5%;
+}*/
+.templates:first-child{
+    margin-left: 10%;
+    margin-top: 20%;
 }
 
 #firstTemplate {
@@ -90,6 +92,14 @@ body
 #secondTemplate {
     border: solid black 2px;
 }
+
+
+
+
+
+
+
+
 
 #CVTemlplateButton {
     text-decoration: none;

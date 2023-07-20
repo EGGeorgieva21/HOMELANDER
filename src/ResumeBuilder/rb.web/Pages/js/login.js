@@ -7,8 +7,8 @@ function login() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Accept': 'text/plain'
-
+            'Accept': 'text/plain',
+            'Authorization': 'token'
         },
         body: JSON.stringify({
             "username": username,

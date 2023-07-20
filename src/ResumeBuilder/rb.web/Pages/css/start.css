@@ -66,6 +66,9 @@ body
     background: linear-gradient(to left top, #00c4cc 0% /*bottom-right color*/, 
     #ebfcff 100% /*top-left color*/ ), linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
 }
+#midClearing h1, p {
+    margin-left: 25px;
+}
 
 
 
@@ -75,11 +78,12 @@ body
     float: left;
 }
 
-/*#templatesDiv {
-    margin-top: 45px;
+#templatesDiv {
+    position: absolute;
+    margin-top: 20px;
     margin-left: 25%;
-    margin-right: 25%
-}*/
+    margin-right: 25%;
+}
 .templates:first-child{
     margin-left: 10%;
     margin-top: 20%;
@@ -90,6 +94,7 @@ body
 }
 
 #secondTemplate {
+    margin-left: 30%;
     border: solid black 2px;
 }
 

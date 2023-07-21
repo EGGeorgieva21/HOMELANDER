@@ -6,27 +6,24 @@ using rb.dal.Models;
 
 namespace rb.api.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class CertificateController : Controller
     {
-        private readonly ILogger<CertificateController> _logger;
-        private readonly CertificateService _certificateService;
+        private readonly CertificateService certificateService;
 
-        public CertificateController(ILogger<CertificateController> logger)
+        public CertificateController()
         {
-            _logger = logger;
-            this._certificateService = new CertificateService();
+            certificateService = new CertificateService();
         }
 
         [Authorize]
         [HttpPost("AddCertificate")]
         public ActionResult AddCertificate(AddCertificate addCertificate)
         {
-            Certificate? certificate = this._certificateService.AddCertificate(addCertificate.Name, addCertificate.IssuedDate, addCertificate.ExpirationDate, addCertificate.UserId);
+            Certificate? certificate = certificateService.AddCertificate(addCertificate.Name, addCertificate.IssuedDate, addCertificate.ExpirationDate, addCertificate.UserId);
 
-            if(certificate != null)
+            if (certificate != null)
             {
                 return Ok(certificate);
             }
@@ -34,10 +31,10 @@ namespace rb.api.Controllers
         }
 
         [Authorize]
-        [HttpGet("GetAllByUserId/{userId}")]
+        [HttpGet("GetAllByUserId")]
         public ActionResult GetAllByUserId(int userId)
         {
-            List<Certificate>? certificates = this._certificateService.GetAllByUserId(userId);
+            List<Certificate>? certificates = certificateService.GetAllByUserId(userId);
 
             if (certificates != null)
             {
@@ -50,7 +47,7 @@ namespace rb.api.Controllers
         [HttpPatch("EditCertificate")]
         public ActionResult EditCertificate(EditCertificate editCertificate)
         {
-            Certificate? certificate = this._certificateService.EditCertificate(editCertificate.Id, editCertificate.Name, editCertificate.IssuedDate, editCertificate.ExpirationDate);
+            Certificate? certificate = certificateService.EditCertificate(editCertificate.Id, editCertificate.Name, editCertificate.IssuedDate, editCertificate.ExpirationDate);
 
             if (certificate != null)
             {
@@ -63,9 +60,9 @@ namespace rb.api.Controllers
         [HttpDelete("RemoveCertificate")]
         public ActionResult RemoveCertificate(int certificateId)
         {
-            bool flag = this._certificateService.RemoveCertificate(certificateId);
+            bool flag = certificateService.RemoveCertificate(certificateId);
 
-            if(flag)
+            if (flag)
             {
                 return Ok("Certificate removed");
             }
